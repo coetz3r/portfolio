@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pieter Coetzer Portfolio</title>
+
+  
+<!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
+ <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
+
+  <link rel="stylesheet" href="assets/css/animations.css">
+ 
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/img/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+  <div class="layout" id="layout"><!-- LAYOUT - everythings that slides -->
+
+    <aside class="menu" id="menu"><!-- mobile menu -->
+      <!-- Close Button Container -->
+      <div class="menu-header">
+        <button class="menu-close" aria-label="Close Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="label">Menu</div>
+
+      <nav>
+        <a href="index.html" id="firstMenuLink" style="--i: 1;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          Home
+        </a>
+        <a href="portfolio.html#process" style="--i: 2;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          My Process
+        </a>
+        <a href="portfolio.html" style="--i: 3;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          Portfolio
+        </a>
+
+      <a href="case-study.html" style="--i: 4;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          case-study
+        </a>
+
+        <a href="services-pricing.html" style="--i: 5;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points=" 2 17 12 22 22 17"></polygon>
+            <polygon points="2 12 12 17 22 12"></polygon>
+          </svg>
+          Price
+        </a>
+        <a href="#about-section" style="--i: 6;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          About
+        </a>
+      </nav>
+
+      <a href="#contact-form" style="--i: 7;" class="menu-btn">Lets Talk</a>
+      <span class="logo under">
+        <h5>pieter coetzer</h5>portfolio
+      </span>
+      <div class="footer">Ready to Start</div>
+    </aside><!-- END OF MOBILE SLIDE AND SHRINK -->
+
+    <div class="screen" id="screen"><!-- outer screen container -->
+
+      <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-logo">
+          <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent">coetzer</span></a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="portfolio.html">portfolio</a>
+          <a href="case-study.html">case study</a>
+          <a href="services-pricing.html">price</a>
+        </div>
+        <a href="#contact-form" class="btn">Let's Talk</a>
+        <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav><!-- end of sticky nav -->
+
+      <div class="screen-inner" id="screenInner"><!-- inner screen container-->
+
+        <div class="hero-container"><!-- hero container -->
+          <div class="hero-nav">
+            <div class="nav-logo">
+              <a href="index.html" class="nav-link-white">pieter <span class="nav-link-accent-alt">coetzer</span></a>
+            </div>
+
+            <div class="hero-nav-links">
+              <a href="index.html" class="active">Home</a>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="case-study.html">Case-study</a>
+              <a href="services-pricing.html">price</a>
+
+              <a href="#contact-form" class="btn">Let's Talk!</a>
+            </div><!-- end of hero-nav -->
+            <button class="burger" aria-label="Toggle menu" aria-expanded="false"><!-- underlay mobile menu -->
+              <span></span>
+              <span></span>
+              <span></span>
+            </button><!-- end of mobile menu -->
+          </div>
+
+          <div class="float"><!-- flying machine  -->
+            <div class="craft-wrapper">
+              <img src="assets/img/hero-head.png" class="craft" alt="Flying machine">
+              <img src="assets/img/sparkle.png" class="sparkle" alt="sparkle on my teeth">
+              <div class="engines"></div>
+              <div class="exhaust-smoke"></div>
+              <div class="speech"></div>
+            </div>
+          </div>
+
+          <div class="hero-body">
+            <div class="hero-content">
+              <h1 class="hero-title"><span class="small-word">make your</span><br><span
+                  class="underline-word">ideas</span>
+                <span class="pop-word">fly!</span>
+              </h1>
+              <p class="hero-tagline">Navigating and mapping complex digital chaos with
+                clear foresight and elevated vision to deliver the perfect build. <br>
+                <strong>No crooked roads!</strong>
+              </p>
+              <div class="hero-actions">
+                <a href="services-pricing.html" class="btn btn--outline">Find Out More</a>
+                <a href="#contact-form" class="btn btn--inverse">Hire Me!</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-roles">
+            <span class="btn btn--outline btn--sm">artist</span>
+            <span class="btn btn--outline btn--sm">designer</span>
+            <span class="btn btn--outline btn--sm">&#60;coder&#62;</span>
+          </div>
+
+        </div><!-- end of hero-container -->
+
+        <div id="navSentinel"></div><!-- navSentinel -->
+
+        <main><!-- page content -->
+
+          <!-- services -->
+<section class="section section--services services-section-bottom" id="services">
+  <div class="container">
+              <p class="section-label">What I provide</p>
+              <h2 class="section-title">Services <small><em>you'll find from me</em></small></h2>
+    <div class="services-layout-wrapper">
+        <div class="services-media">
+          <img src="assets/img/coder-pro.webp" class="serv-img" alt="Dev at desk">
+        </div>
+
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-icon">
+                    <img src="assets/img/icons/design.png" alt="Corporate Identity">
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">Corporate Identity</h3>
+                  <p class="service-text">
+                    Building comprehensive brand guidelines that resonate.
+                  </p>
+                </div>
+            </div>
+
+                <div class="service-item">
+                  <div class="service-icon">
+                    <img src="assets/img/icons/product.png" alt="Product Branding">
+                  </div>
+                  <div class="service-content">
+                  <h3 class="service-title">Product Branding</h3>
+                  <p class="service-text">
+                    Crafting memorable touchpoints for physical and digital products.
+                  </p>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon">
+                    <img src="assets/img/icons/dev.png" alt="Web Development">
+                  </div>
+                    <div class="service-content">
+                  <h3 class="service-title">Web Development</h3>
+                  <p class="service-text">
+                    Stunning, clean, and interactive frontend interfaces. 
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+</section><!-- end of services -->
+
+<section class="section section--specials" id="specials"><!-- specials -->
+  <div class="container container--specials">
+        <p class="section-label">Current Promotions</p>
+        <h2 class="section-title">Single-page <small><em>Starter Website Package</em></small></h2>
+   </div>
+ 
+  <div class="specials-inner">
+    <div class="grid grid--2">
+
+      <div class="card">
+              <div class="pkg-name">
+                <p>Business Starter</p>
+                <h1>Website</h1>
+              </div>
+              <p>from</p>
+              <div class="pkg-price"><sup>R</sup>5,500</div>
+              <div class="pkg-tagline">Perfect for startups, coaches, consultants & small side projects</div>
+              <div class="pkg-divider"></div>
+              <ul class="pkg-includes">
+                <li>High-converting 1-page website</li>
+                <li>Fully Responsive & Mobile-Optimized</li>
+                <li>Contact form + Google Maps + WhatsApp</li>
+                <li>Basic SEO setup</li>
+                <li>3 months FREE maintenance & support</li>
+                <li>2 rounds of revisions</li>
+                <li>All source files + full ownership</li>
+                <li>2-3 logo concepts</li>
+              </ul>
+              <a href="sample3.html" class="btn">View LIve Demo</a>
+            </div>
+
+      <div class="text-column">
+          <h2>Why choose a single-page website?</h2>
+          <p class="spacing-top-10">Single-page website optimized for convertion and Lead collection</p>
+
+          <h2 class="spacing-top-25-bottom-7">What You'll Receive</h2>
+            <ul>
+              <li>Clean, modern & fast-loading websites</li>
+              <li>Honest communication - no jargon</li>
+              <li>You own everything 100%</li>
+              <li>Real human support (not an agency)</li>
+            </ul>
+
+            <h3 class="spacing-top-50">Payment Plans Available</h3>
+            <p>50% deposit, balance on completion, </p>
+            <p>or over 3 Months</p>
+            <h2>Ready to grow your business online?</h2>
+      </div>
+    </div>
+  </div>
+</section><!-- end of specials -->
+
+          <section class="heading-section"><!-- TOOLS & SERVICES -->
+            <div class="container">
+              <p class="section-label">Behind my designs</p>
+              <h2 class="section-title">Tools & Systems</h2>
+              <header class="section-header"></header>
+              <div class="grid grid--3">
+
+                <div class="card card--tool">
+                  <h3>Design & Assets</h3>
+                  <div class="icon-group multi-icons">
+                    <div class="icon-item">
+                      <img src="assets/img/icons/inkscape.svg" alt="Inkscape">
+                      <span>Inkscape</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/figma.svg" alt="Figma">
+                      <span>Figma</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/gimp.png" alt="GIMP">
+                      <span>GIMP</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/blender.svg" alt="Blender">
+                      <span>Blender</span>
+                    </div>
+                  </div>
+                  <p class="tool-text">Custom vector brand systems, image optimization,
+                    and 3D asset modeling/product mockups.</p>
+                </div>
+
+                <div class="card card--tool">
+                  <h3>Development</h3>
+                  <div class="icon-group multi-icons">
+                    <div class="icon-item">
+                      <img src="assets/img/icons/linux.png" alt="Linux">
+                      <span>Linux</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/vscodium.svg" alt="VSCodium">
+                      <span>VSCodium</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/github.svg" alt="GitHub">
+                      <span>GitHub</span>
+                    </div>
+                  </div>
+                  <p class="tool-text">Writing clean semantic markup, custom CSS layouts,
+                    and local environment testing.</p>
+                </div>
+
+                <div class="card card--tool">
+                  <h3>Platforms</h3>
+                  <div class="icon-group multi-icons">
+                    <div class="icon-item">
+                      <img src="assets/img/icons/wordpress.svg" alt="WordPress">
+                      <span>WordPress</span>
+                    </div>
+                    <div class="icon-item">
+                      <img src="assets/img/icons/woocommerce.svg" alt="WooCommerce">
+                      <span>WooCommerce</span>
+                    </div>
+                  </div>
+                  <p class="tool-text">Building robust e-commerce architectures, custom themes,
+                    and hosting static deployment files.</p>
+                </div>
+
+              </div>
+            </div>
+          </section><!-- end of tools -->
+
+   <!-- TESTAMONIALS REMOVED -->
+
+          <section class="section section--about" id="about-section">
+            <div class="container">
+              <div class="grid grid--about">
+
+                <div class="about-image">
+                  <div class="image-card">
+                    <img src="assets/img/profile.png" alt="my profile pic" loading="lazy">
+                  </div>
+                  <div class="floating-badge">
+                    <i class="fas fa-medal"></i> 5+ years of excellence
+                  </div>
+                </div>
+
+                <div class="about-content">
+                  <span class="section-subtitle"><i class="fas fa-asterisk about-icon-small"></i> WHO AM I?</span>
+                  <h2>Crafting digital <span class="highlight">experiences</span><br>that drive real impact.</h2>
+                  <div class="description">
+                    <p>I am a passionate designer, developer, and strategist dedicated to building meaningful online
+                      solutions. Since 2019, I've partnered with startups, enterprises, and creative minds to turn
+                      complex ideas into elegant digital realities.</p>
+                    <p>My human-first approach blends innovation with empathy — ensuring every project not only looks
+                      stunning but performs exceptionally.</p>
+                  </div>
+
+                  <div class="grid grid--3">
+                    <div class="card card--feature">
+                      <i class="fas fa-code"></i>
+                      <h4>Clean Code</h4>
+                      <p>Scalable & maintainable</p>
+                    </div>
+                    <div class="card card--feature">
+                      <i class="fas fa-palette"></i>
+                      <h4>Creative Design</h4>
+                      <p>Bold & user-centric</p>
+                    </div>
+                    <div class="card card--feature">
+                      <i class="fas fa-rocket"></i>
+                      <h4>Fast Delivery</h4>
+                      <p>Agile & reliable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section><!-- end of about -->
+
+<!-- CONTACT FORM -->
+          <section class="section section--contact" id="contact-form">
+
+            <div class="contact-left">
+              <p class="contact-label">contact me</p>
+              <div>
+                <h1 class="contact-title">Let's talk</h1>
+                <p class="contact-subtitle">about your project</p>
+              </div>
+              <button class="btn btn-form2 contact-btn-spacing">Let's discuss your project</button>
+              <div class="contact-info">
+
+                <a class="contact-info-item"
+                  href="https://wa.me/27642636529?text=Hi%20Pieter%2C%20I%27d%20like%20to%20chat%20about%20a%20project."
+                  target="_blank" rel="noopener" aria-label="Chat with Pieter on WhatsApp">
+                  <i class="fab fa-whatsapp whatsapp-icon"></i>
+                  064 263 6529
+                </a>
+
+                <div class="contact-info-item contact-info-spacing">
+                  coetzer69@gmail.com
+                </div>
+
+                <div class="contact-info-item contact-info-spacing">
+                  <span>Strand, Helderberg<br>Cape Town, South Africa</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-right">
+              <form id="contactForm"><!-- -->
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="fullname">fullname *</label>
+                    <input id="fullname" type="text" placeholder="John Doe" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">email address *</label>
+                    <input id="email" type="email" placeholder="example@email.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">phone number *</label>
+                    <input id="phone" type="tel" placeholder="123 4567 890" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="category">category *</label>
+                    <select id="category" required>
+                      <option value="" disabled selected>work needed</option>
+                      <option>Web Design</option>
+                      <option>Development</option>
+                      <option>Branding</option>
+                      <option>Consulting</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full">
+                    <label for="message">message *</label>
+                    <textarea id="message" placeholder="Enter here..." required></textarea>
+                  </div>
+                </div>
+                <div class="form-footer">
+                  <button type="submit" class="btn btn--icon"><span class="btn-text">submit</span><span
+                      class="btn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg></span></button>
+                </div>
+              </form>
+            </div>
+          </section><!-- end of contact form -->
+
+          <!-- FOOTER CTA >>>>>>>>>>>>>>>>>> reconsolidate into one for all pages -->
+          <section class="section section--cta">
+            <h2>Ready to build something<br><em>beautiful?</em></h2>
+            <p>Let's chat about your project. No pressure, no jargon — just a straightforward conversation about what
+              you need.</p>
+            <div class="cta-actions">
+              <a href="index.html#contact-form" class="btn">Get A Free Quote</a>
+              <a href="portfolio.html" class="btn btn--ghost">View My Work</a>
+            </div>
+          </section><!-- end of footer CTA -->
+
+          <footer><!-- footer -->
+            <div class="footer-logo">Pieter <span>Coetzer</span></div>
+            <div class="footer-copy">© 2026 Pieter Coetzer. All rights reserved.</div>
+            <div class="footer-socials">
+              <a href="#" class="footer-social">Dr</a>
+              <a href="https://www.linkedin.com/in/coetzr69/" class="footer-social">in</a>
+              <a href="https://www.fiverr.com/coetzer69/" class="footer-social">fi</a>
+              <a href="https://www.behance.net/coetzer694ebb" class="footer-social">Be</a>
+            </div>
+          </footer>
+
+        </main><!-- end of page content -->
+
+      </div><!-- end of screen-inner -->
+
+      <button class="screen-dim" id="screenDim" aria-label="Close menu"></button>
+    </div><!-- end of outer screen -->
+
+  </div><!-- end of layout -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/slide-nav.js"></script>
+
+ 
+</body>
+
+</html>

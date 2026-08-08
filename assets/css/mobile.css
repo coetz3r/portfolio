@@ -1,0 +1,747 @@
+/* ======================================================
+   MOBILE RESPONSIVE — smaller than 768px
+   ====================================================== */
+@media screen and (max-width: 768px) {
+
+  /* ===== Navigation ================================== */
+  .nav-links,
+  .page-nav-links,
+  .hero-nav-links a:not(.btn) {
+    display: none;
+  }
+
+  .hero-nav,
+  .sticky-nav,
+  .page-nav {
+    padding: 0 20px;
+  }
+
+  .sticky-nav .btn,
+  .hero-nav .btn,
+  .page-nav .btn {
+    display: none;
+  }
+
+  .hero-nav.scrolled {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* ===== Burger ====================================== */
+  .burger {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    flex: none;
+  }
+  .burger span {
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* ===== Mobile Menu (slide & shrink) ================ */
+  .layout {
+    position: relative;
+    min-height: 100dvh;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(19, 19, 133);
+    overflow-y: auto;
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .menu-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+  }
+  .menu-close:hover { opacity: 0.7; }
+
+  .menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .menu nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Michroma', sans-serif;
+    font-size: var(--nav-link-size);
+    font-weight: var(--nav-link-weight);
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+  }
+
+  .menu-icon {
+    flex-shrink: 0;
+    opacity: 0.8;
+  }
+
+  /* ── Nav Link Wrappers & Stagger States ── */
+  .menu .label,
+  .menu a,
+  .menu .logo.under,
+  .menu .footer,
+  .menu nav a {
+    opacity: 0;
+    will-change: transform, opacity;
+    color: rgb(206, 207, 255);
+  }
+
+  .menu .logo {
+    margin-top: auto;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .menu .logo strong { font-weight: 700; }
+
+  .menu .logo.under {
+    display: block;
+    margin-top: auto;
+    padding: 10px 12px 25px;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(23, 82, 243, 0.76);
+  }
+  .menu .logo.under strong {
+    color: #fff;
+    font-weight: 900;
+  }
+
+  .menu .footer {
+    padding: 10px 7px 80px 20px;
+  }
+
+  /* ===== Menu CTA Button ============================= */
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    color: #ffffff !important;
+    border: 1px solid rgb(68, 68, 209);
+    font-family: 'Michroma', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    width: 100%;
+    max-width: 62vw;
+    padding: 10px 20px;
+    margin-top: 2rem;
+     margin-bottom: 2rem;
+    border-radius: 50px;
+    box-sizing: border-box;
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: background 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .menu-btn:hover {
+    background: var(--blue);
+    transform: scale(1.01);
+    box-shadow: 2px 10px 30px -5px rgba(0, 0, 0, 0.815);
+  }
+
+  /* ===== Menu Open State ============================= */
+  .layout.menu-open .burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .layout.menu-open .burger span:nth-child(2) { opacity: 0; }
+  .layout.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ========= slide screen that opens the menu ========= */
+  .layout.menu-open .screen {
+    transform: translateX(50%) scale(0.70);
+    border-radius: 20px;
+    box-shadow: -25px 0 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .layout.menu-open .screen-dim {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  /* ===== Menu Animation Engine ======================= */
+  @keyframes leapToAttention {
+    0%   { opacity: 0; transform: translateX(40px) scale(0.96); }
+    70%  { opacity: 1; transform: translateX(-4px) scale(1.02); }
+    100% { opacity: 1; transform: translateX(0) scale(1) rotate(0deg); }
+  }
+
+  @keyframes dropSettle {
+    0%   { opacity: 0; transform: translateY(-15px) scale(0.9); }
+    65%  { opacity: 1; transform: translateY(3px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes risePop {
+    0%   { opacity: 0; transform: translateY(12px) scale(0.9); }
+    65%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .layout.menu-open .menu .label {
+    animation: dropSettle 0.45s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  .layout.menu-open .menu a,
+  .layout.menu-open .menu-btn {
+    animation: leapToAttention 0.65s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+    animation-delay: calc(var(--i) * 0.06s + 0.15s);
+  }
+
+  .layout.menu-open .menu nav a {
+    animation-delay: calc(var(--i) * 0.06s + 0.15s);
+  }
+
+ 
+  .layout.menu-open .menu .logo.under {
+    animation: leapToAttention 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 0.48s;
+  }
+
+  .layout.menu-open .menu .footer {
+    animation: risePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 0.58s;
+  }
+
+  /* ===== Layout / Container ========================== */
+  body { background-color: var(--bg); }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
+  }
+
+  /* ===== Grids ======================================= */
+  .grid--2,
+  .grid--3,
+  .grid--4,
+  .grid--5,
+  .grid--steps {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--steps {
+    gap: 1.5rem;
+  }
+
+  /* Remove connector lines between steps in column layout */
+  .card--step:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Steps: number beside title & description, line between */
+  .card--step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    align-items: start;
+    text-align: left;
+    padding: 0 4px;
+  }
+
+  .card--step .step-num {
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+
+  .card--step .step-title {
+    margin-bottom: 8px;
+  }
+
+  .card--step .step-desc {
+    margin-bottom: 0;
+  }
+
+  /* Vertical line between the step number and the text */
+  .card--step::before {
+    content: '';
+    position: absolute;
+    left: 40px; /* 4px padding + 56px circle + half of 20px column gap */
+    top: 70px;
+    bottom: -45px;
+    width: 4px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+
+  /* ===== Typography ================================== */
+  .section-title,
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header h2 {
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .section-header--center h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  .section-header--center p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .card-title { font-size: 1.15rem; }
+  .project-title { font-size: 1rem; }
+  .card-text { font-size: 0.8rem; line-height: 1.5; }
+
+  .tech-code,
+  .tech-status,
+  .project-category,
+  .btn-text,
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+
+  .pkg-price { font-size: 2rem; }
+
+  /* ===== Cards ======================================= */
+  .card {
+    padding: 12px 14px;
+    border-radius: 16px;
+    margin: 5px;
+  }
+
+  .card--faq { padding: 20px 15px; }
+
+  /* ===== FAQ ========================================= */
+  .section--faq { padding: 20px 20px; }
+  .section--faq .grid { margin-top: 20px; }
+  .faq-q { font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; }
+  .faq-a { font-size: 0.8rem; line-height: 1.5; }
+
+  /* ===== Sections ==================================== */
+  .section--packages,
+  .section--process,
+  .section--included {
+    padding: 40px 20px;
+  }
+
+  .section--page-hero {
+    padding: 100px 24px 60px;
+  }
+
+  .section--cta {
+    padding: 60px 20px;
+  }
+
+  .section--cta.top {
+    padding: 2rem 1rem;
+  }
+
+  .section--cta.net {
+    padding: 1rem;
+  }
+
+  
+  .section--about {
+    padding: 3rem 1rem;
+  }
+
+  .section--logo {
+    padding: 40px 20px;
+  }
+
+  /*.section .btn,
+  .section--cta .btn {
+    display: inline-block;
+  }*/
+
+  /* ===== Hero ======================================== */
+  .hero-container {
+    height: 100vh;
+    min-height: 500px;
+  }
+
+  .hero-content {
+    transform: none;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-title .pop-word {
+    font-size: 3rem;
+  }
+  .hero-title .underline-word {
+    font-size: 2.5rem;
+  }
+  .small-word {
+    font-size: 1.1rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.7rem;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero-roles {
+    display: none;
+    }
+
+  .float {
+    top: 10%;
+    right: 5%;
+  }
+
+.craft-wrapper {  margin-top: 200px;  }
+
+
+  .craft {
+    width: 180px;
+    }
+
+  .sparkle {
+    width: 50px;
+  }
+.btn{ font-size: 0.7rem;}
+  /* ===== Services ==================================== */
+  .services-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* On mobile: list goes below the media */
+  .services-media {
+    order: 1;
+  }
+
+  .services-list {
+    order: 2;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .service-item {
+    padding-left: 0;
+    gap: 1rem;
+  }
+
+  .service-text {
+    font-size: 0.8rem;
+  }
+  /* services on index.html */
+ .services-main-img,
+.services-media img,
+.serv-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+} 
+  .card--tool{ padding: 0px;}
+
+
+
+
+  /* ===== Specials ==================================== */
+  .specials-inner .grid--2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ===== About ======================================= */
+  .grid--about {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .floating-badge {
+    right: 0;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* ===== Contact ===================================== */
+  .section--contact {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .contact-left {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-right {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+/* === portfolio.html ==== */
+.logo-section-img { max-width: 110%; }
+  /* ===== Packages / Pricing ========================== */
+  .packages-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .packages-intro--compact {
+    margin-bottom: 12px;
+  }
+
+  .web-price-block {
+    text-align: left;
+  }
+
+  .card--web {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .card-maint {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .maint-desc {
+    font-size: 0.7rem;
+  }
+
+  /* ===== Case Study ================================== */
+  .outer-case {
+    padding: 2rem 1rem;
+  }
+/*
+  .outer-overview {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }*/
+
+  .overview-image-block {
+    width: 100% !important;
+    border: 2px solid rgb(13, 13, 15);
+  }
+
+  .case-study-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .inner-case,
+  .case-sidebar {
+    width: 100%;
+  }
+
+  .case-sidebar {
+    position: static;
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+/* ===== waoumii case-study =======/
+  @media screen and (max-width: 768px) {
+  /* 1. Make outer-overview the single flex/grid parent */
+  .outer-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* 2. Strip inner-overview wrapper styles on mobile */
+  .inner-overview {
+    display: contents; /* Unwraps inner-overview so its children sit directly in outer-overview */
+  }
+
+  /* 3. Re-order all elements in sequence */
+  .section-label {
+    order: 1;
+  }
+
+  .section-title {
+    order: 2;
+    margin-bottom: 0.5rem;
+  }
+
+  .overview-image-block {
+    order: 3;
+    width: 100% !important;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  /* Target the description paragraph */
+  .inner-overview p:not(.section-label) {
+    order: 4;
+  }
+
+.case-sidebar{ display: none}
+  /* ===== Vanilla Banner ============================== */
+  /* vanilla */
+/* ================= VANILLA ======================== */
+.vanilla-title { padding-top: 1px; }
+.vanilla-em { font-size: 2.5rem; }
+.vanilla-p { padding-top: 0;}
+.vanilla-banner-title { padding-left: 35px; line-height: 0; }
+.vanilla-banner-em { font-size: 2.5rem;  line-height: 55px;}
+.vanilla-banner-p { padding-left: 35px; font-size: 0.9rem;}
+.vanilla-banner{  border-radius: 20px; padding:15px;}
+.van{  margin: 10px 10px; padding: 1px; h2.van{font-size: 1.0rem; }}
+.my-ico2n{ padding: 1px 120px 0;margin-bottom: 0px;} /* ?????????????????? */
+.van .grid{gap: 0;}
+
+
+
+
+  /* ===== Logo Section ================================ */
+  .logo-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-section > div:first-child {
+    flex: 0 0 100%;
+  }
+
+  .logo-section > div:last-child {
+    max-width: 100%;
+  }
+
+  /* ===== Swiper ====================================== */
+ .section--packages p{font-size:0.7rem; margin-top: 20px;}
+.swiper-pagination-bullet{width: 3px; height: 3px;}
+
+  /* ===== Business Cards Swiper ======================= */
+  .swiper-business-cards {
+    padding-top: 10px;
+  }
+
+  .swiper-business-cards .swiper-slide {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    padding: 0 5px;
+    box-sizing: border-box;
+ width: 200%;
+ height: auto;
+}
+
+
+  .swiper-business-cards .swiper-slide img {
+    display: block;
+    width: 200%;
+    max-width: 95%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 2px;
+    
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ===== Restaurant Menu / Flyer Swiper ============== */
+  
+
+  .swiper-restaurant-menu .swiper-slide {
+    height: auto; /*360px;*/
+    width: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: none;
+    background: transparent !important;
+    overflow: hidden;
+   object-fit: contain;
+  }
+
+  .swiper-restaurant-menu .swiper-slide img {
+    display: block;
+    width: 200%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2px; 
+  }
+
+
+
+/* explainer */
+
+h2.ex{font-size: 0.9rem; padding:0 !important; margin: 0 !important; }
+p.explain {
+  font-size: 10px; /* Base size */
+  display: inline-block; /* Required for transform to work on inline elements */
+ 
+ 
+}
+
+  
+.waoumii-text{font-size: 0.8rem;}
+
+
+
+
+  /* ===== Footer ====================================== */
+  footer {
+    padding: 24px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+}

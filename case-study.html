@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>case-studies</title>
+
+ <!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
+ <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
+    
+   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/img/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="layout" id="layout">
+
+   <aside class="menu" id="menu"><!-- mobile menu -->
+  <!-- Close Button Container -->
+  <div class="menu-header">
+    <button class="menu-close" aria-label="Close Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="label">Menu</div>
+  
+  <nav>
+    <a href="index.html" id="firstMenuLink" style="--i: 1;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+      home
+    </a>
+    <a href="portfolio.html#process" style="--i: 2;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+      My Process
+    </a>
+    <a href="portfolio.html" style="--i: 3;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+      Portfolio
+    </a>
+          <a href="case-study.html" style="--i: 4;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          case-study
+        </a>
+    <a href="services-pricing.html" style="--i: 5;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points="2 17 12 22 22 17"></polygon><polygon points="2 12 12 17 22 12"></polygon></svg>
+      Price
+    </a>
+    <a href="index.html#about-section" style="--i: 6;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      About
+    </a>
+  </nav>
+
+  <a href="index.html#contact-form" style="--i: 7;" class="menu-btn">Let's Talk</a>
+  <span class="logo under">pieter <strong>coetzer</strong></span>
+  <div class="footer">Born Ready</div>
+</aside>
+
+    <div class="screen" id="screen"><!-- outer screen wrapper -->
+
+      <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-logo">
+         <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="case-study.html" class="active">Case-study</a>
+          <a href="services-pricing.html">Price</a>
+        </div>
+        <a href="index.html#contact-form" class="btn">Hire Me!</a>
+        <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <div class="screen-inner" id="screenInner"><!-- inner screen wrapper -->
+
+              <!-- page nav -->
+          <nav class="page-nav">
+            <div class="nav-logo">
+              <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
+            </div>
+            <div class="page-nav-links">
+              <a href="index.html">home</a>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="case-study.html" class="active">Case-study</a>
+              <a href="services-pricing.html">price</a>
+            </div>
+            <a href="index.html#contact-form" class="btn">Let's Talk</a>
+            <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        
+        <div id="navSentinel"></div>
+
+        <!-- PAGE HERO -->
+        <section class="section section--page-hero">
+          <p class="page-hero-label">Build with Passion!</p>
+          <h1 class="page-hero-title">Case-<br><em>Studies</em></h1>
+          <p class="page-hero-desc">Building responsive, block-based e-commerce and web solutions 
+            optimized for performance.</p>
+        </section>
+
+    <!-- Simple Navigation Back to Index -->
+    <header class="site-header">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+    </header>
+
+   <!-- overview -->     
+<section class="outer-overview">
+    <div class="inner-overview">
+             <p class="section-label">Overview</p>
+          <h2 class="section-title">Systems Audit &<br><em> Refactoring</em></h2>
+
+        <p>The original site, a 2014 Wix build, treated every piece of information as equally 
+                important — five sub-businesses flattened into one three-level navigation, testimonials 
+                marked up as page headings, no single call to action anywhere on the page. There was no 
+                hierarchy telling a visitor what mattered most or what to do next.</p>
+                <p>The redesign starts from the opposite premise: one clear goal per page. 
+                  The homepage's function is to build trust fast and get a visitor to one
+                  action — get a quote — with everything else (the four divisions, the trust
+                   signals, the contact info) supporting that single goal rather 
+                   than competing with it.</p>
+    </div>
+
+    <div class="overview-image-block">
+        <a href="gbsec.html"><img src="case-studies/case-1/img/screenshot.png" 
+        alt="Legacy Site Audit Breakdown" class="overview-img"></a>
+    </div>
+
+
+    <aside class="case-sidebar">
+      <div class="sidebar-section">
+
+        <span class="sidebar-label">Role</span>
+        <p class="sidebar-value">Lead Front-End Dev / <br> UI/UX Designer</p>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-label">Focus</span>
+        <ul class="sidebar-tags">
+          <li>UI/UX</li>
+          <li>Performance</li>
+          <li>Local Deployment</li>
+          <li>AVIF Format</li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-label">Core Stack</span>
+        <ul class="sidebar-tags">
+          <li>HTML5</li>
+          <li>CSS3 Grid</li>
+          <li>Flexbox</li>
+          <li>GitHub Pages</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="sidebar-label">Results</span>
+        <div class="metric-row">
+          <span>Performance:</span>
+          <strong>&lt; 1.0s</strong>
+        </div>
+        <div class="metric-row">
+          <span>Initial Paint:</span>
+          <strong>&lt; 1.0s</strong>
+        </div>
+        <div class="metric-row">
+          <span>Responsiveness:</span>
+          <strong>Fluid</strong>
+        </div>
+      </div>
+    </aside>
+</section>
+
+
+<!-- VIEW PROJECT banner-->
+        <section class="section section--cta top">
+          <h2>View The Results</h2>
+          <p>Choose a button to view the project. <br>Transpose is the rebuild and Original is 
+            the referance offline site.</p>
+          <div class="cta-actions">
+            <a href="case-studies/case-1/case-01.html" class="btn btn--lg">Transposed</a>
+            <a href="gbsec.html" class="btn btn--ghost btn--lg">Original</a>
+          </div>
+        </section>
+
+
+   <!-- waoumii case-study -->     
+<section class="outer-overview">
+    <div class="inner-overview">
+             <p class="section-label">Case-study: wordPress eCommerce website</p>
+          <h2 class="section-title">WooCommerce &<br><em> Maker Space</em></h2>
+
+        <p>Built as a unified digital ecosystem, waoumii.co.za integrates custom apparel 
+          retail, downloadable digital assets (PDFs, poster designs, and printables), 
+          and personal design & web development services into a single streamlined 
+          architecture. Beyond standard e-commerce, the platform serves as a central 
+          showcase and maker hub—bridging physical merchandise, custom client services,
+           and original engineering innovations like the magna'Motr project without 
+           cluttering the user experience.</p>  
+           <p class="waoumii-text">Visit <a href="https://www.waoumii.co.za" class="waoumii-link">waoumii.co.za</a> to view the site</p>    
+        </div>
+
+    <div class="overview-image-block">
+        <a href="https://www.waoumii.co.za/"><img src="assets/img/waoumii.png" 
+        alt="waoumii.co.za" class="overview-img"></a>
+    </div>
+</section>
+
+
+
+ <!-- PROCESS - 5 design steps -->
+        <section class="section section--process">
+          <div class="container">
+          <p class="section-label">The Method in the <strong>Madness</strong></p>
+          <h2 class="section-title">The Creative<br><em>Process</em></h2>
+          <div class="grid grid--5 grid--steps">
+            <div class="card card--step">
+              <div class="step-num">01</div>
+              <div class="step-title">The Analyzing Phase</div>
+              <div class="step-desc">I discuss your business, audience, and goals. I ask 
+                the right questions so I understand what success looks like for you.</div>
+            </div>
+            <div class="card card--step">
+              <div class="step-num">02</div>
+              <div class="step-title">Research & Discovery</div>
+              <div class="step-desc">I study your competitors and build a moodboard of visual
+                 directions. You approve the direction before any design begins.</div>
+            </div>
+            <div class="card card--step">
+              <div class="step-num">03</div>
+              <div class="step-title">Design & Create</div>
+              <div class="step-desc">I develop as many concepts as needed and evaluate each one
+                against proven design principles, then present them with clear reasoning — why 
+                each choice deserves your brand.</div>
+            </div>
+            <div class="card card--step">
+              <div class="step-num">04</div>
+              <div class="step-title">Refine & re-design</div>
+              <div class="step-desc">Your feedback shapes the final result. Two rounds of 
+                revisions are included in every package.</div>
+            </div>
+            <div class="card card--step">
+              <div class="step-num">05</div>
+              <div class="step-title">Conclusion & Completion</div>
+              <div class="step-desc">You receive all final files in every format you'll ever 
+                need, plus a brand guide for consistent future use.</div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+<!-- 1. Analizing Phase -->
+<div class="outer-case">
+  <div class="case-study-layout">
+    <main class="inner-case">
+       <p class="section-label">Analizing Phase </p>
+          <h2 class="section-title">Initialisation &<br><em>Commencement</em></h2>
+      
+          <p>Every successful project begins with an intensive alignment phase. I deep-dive 
+            into your operational ecosystem, target demographic, and core commercial objectives. 
+            By auditing existing brand assets and asking deliberate, targeted questions, 
+            we uncover the exact technical and creative parameters required to build a 
+            layout that solves real business problems.</p>
+        
+          <p>Once the parameters are clear, I translate that research into a strategic creative 
+            direction — a framework that dictates every visual decision before a single pixel 
+            is placed, so the design has a reason behind it rather than a vibe.</p>
+          <p>From there, I move into focused concept development. Rather than presenting scattershot options,
+            I build a small number of strong directions, each backed by the reasoning that ties it back to
+            your original objectives.</p>
+          <br>
+        <p><strong>This turns feedback into a structured conversation instead of a guessing game.</strong></p>
+          <br>
+          <p>The result isn't just a layout that looks finished — it's one that's been pressure-tested 
+            against the business problem we identified on day one, refined through iteration, and built 
+            to scale as your brand grows.</p>
+    </main>
+  </div>
+</div>
+
+<!-- 2. Research & Discovery -->
+<div class="outer-case">
+  <div class="case-study-layout">
+    <main class="inner-case">
+        <p class="section-label">Research & Discovery </p>
+          <h2 class="section-title">Discovery &<br><em>System Analysis</em></h2>
+        <p>Design should never happen in a vacuum. I conduct an architectural analysis 
+          of your immediate market competitors to identify visual opportunities and 
+          positioning gaps. This research is translated into a curated visual 
+          moodboard—establishing the typographic direction, contrast metrics, 
+          and geometric style parameters before a single line of vector production begins.</p>
+
+        <p>Moving from theory to execution, I build out tailored, mathematically sound 
+          design variants. Rather than delivering arbitrary choices, every concept is
+           rigidly evaluated against proven UI/UX and print production principles.
+            When presented, each layout variation is backed by clear technical 
+            reasoning, demonstrating exactly how the spatial choices, color systems,
+             and typography serve your brand's authority.</p>
+      </main>
+  </div>
+</div>
+
+<!-- 3. Design & Create -->
+<div class="outer-case">
+  <div class="case-study-layout">
+    <main class="inner-case">
+
+        <p class="section-label">Design & Create </p>
+          <h2 class="section-title">Concept Engineering &<br><em>Development</em></h2>
+        <p>Moving from theory to execution, I build out tailored, mathematically sound design 
+          variants. Rather than delivering arbitrary choices, every concept is rigidly 
+          evaluated against proven UI/UX and print production principles. When presented,
+           each layout variation is backed by clear technical reasoning, demonstrating 
+           exactly how the spatial choices, color systems, and typography serve your 
+           brand's authority.</p>
+      </main>
+  </div>
+</div>
+
+
+<!-- PURE VANILLA banner-->
+<section class="section van">
+  <div class="vanilla-banner">
+  <div class="grid grid--3">
+
+  <img src="assets/img/icons/vanilla.png" alt="Vanilla Coding" class="my-ico2n">
+          <h2 class="vanilla-banner-title">Powered by<br>
+            <em class="vanilla-banner-em">Vanilla</em></h2>
+          <p class="vanilla-banner-p">Only The Base Flavour. <br>No Complex Frameworks in Development Process</p>
+
+ </div>
+
+    </div>
+</section>
+
+
+
+<!-- 4. Refine & re-design -->
+<div class="outer-case">
+  <div class="case-study-layout">
+    <main class="inner-case">
+
+        <p class="section-label">Refine & re-design </p>
+          <h2 class="section-title">Iterative Refinement &<br><em>Stress-Testing</em></h2>
+
+        <p>Collaboration shapes the final high-performance asset. Using your direct feedback, 
+          we systematically refine the chosen direction to lock in absolute visual perfection.
+           Two comprehensive rounds of revision are structurally built into the package
+            pipeline, ensuring the final layout is thoroughly polished, scrutinized, 
+            and perfectly tuned to your expectations.</p>
+     
+      </main>
+  </div>
+</div>
+
+<!-- 5. Conclusion & Completion -->
+<div class="outer-case">
+  <div class="case-study-layout">
+    <main class="inner-case">
+        <p class="section-label">Conclusion & Completion </p>
+          <h2 class="section-title">Technical Handover &<br><em>Implementation</em></h2>
+
+        <p>A design is only as good as its deployment. Upon final approval, you receive a complete, 
+          production-ready asset delivery matrix containing all necessary file formats for digital
+           and commercial press usage (SVG, PNG, and high-resolution print vectors). This is 
+           accompanied by an integrated foundational style guide to ensure your brand's typography,
+            colors, and margins remain pristine and consistent for years to come.</p>
+      </main>
+  </div>
+</div>
+
+    <!-- CTA STRIP -->
+<section class="section section--cta">
+    <h2>Ready to build something<br><em>beautiful?</em></h2>
+    <p>Let's chat about your project. No pressure, no jargon — just a straightforward 
+      conversation about what you need.</p>
+  <div class="cta-actions">
+    <a href="index.html#contact" class="btn btn--lg">Get A Free Quote</a>
+    <a href="index.html#services" class="btn btn--ghost btn--lg">View My Work</a>
+  </div>
+</section>
+
+        <!-- FOOTER -->
+        <footer>
+          <div class="footer-logo">Pieter <span>Coetzer</span></div>
+          <div class="footer-copy">© 2026 Pieter Coetzer. All rights reserved.</div>
+          <div class="footer-socials">
+            <a href="#" class="footer-social">Dr</a>
+            <a href="https://www.linkedin.com/in/coetzr69/" class="footer-social">in</a>
+            <a href="https://www.fiverr.com/coetzer69/" class="footer-social">fi</a>
+            <a href="https://www.behance.net/coetzer694ebb" class="footer-social">Be</a>
+          </div>
+        </footer>
+
+      </div><!-- end of screen-inner -->
+
+      <button class="screen-dim" id="screenDim" aria-label="Close menu"></button>
+    </div><!-- end of screen -->
+
+  </div><!-- end of layout -->
+
+  <script defer src="assets/js/main.js"></script>
+  <script src="assets/js/slide-nav.js"></script>
+
+</body>
+</html>

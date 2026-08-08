@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  
+<!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
+ <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
+
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/img/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="layout" id="layout">
+
+   <aside class="menu" id="menu"><!-- mobile menu -->
+  <!-- Close Button Container -->
+  <div class="menu-header">
+    <button class="menu-close" aria-label="Close Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="label">Menu</div>
+  
+  <nav>
+    <a href="index.html" id="firstMenuLink" style="--i: 1;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+      home
+    </a>
+    <a href="#process" style="--i: 2;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+      My Process
+    </a>
+    <a href="portfolio.html" style="--i: 3;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+      Portfolio
+    </a>
+          <a href="case-study.html" style="--i: 4;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          case-study
+        </a>
+    <a href="services-pricing.html" style="--i: 5;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points="2 17 12 22 22 17"></polygon><polygon points="2 12 12 17 22 12"></polygon></svg>
+      Price
+    </a>
+    <a href="index.html#about-section" style="--i: 6;">
+      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      About
+    </a>
+  </nav>
+
+  <a href="index.html#contact-form" style="--i: 7;" class="menu-btn">Let's Talk</a>
+  <span class="logo under">pieter <strong>coetzer</strong></span>
+  <div class="footer">Ready when you are</div>
+</aside>
+
+    <div class="screen" id="screen"><!-- outer screen wrapper -->
+
+      <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-logo">
+          <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html" class="active">Portfolio</a>
+          <a href="case-study.html">Case-study</a>
+          <a href="services-pricing.html">Price</a>
+        </div>
+        <a href="index.html#contact-form" class="btn">Hire Me!</a>
+        <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <div class="screen-inner" id="screenInner"><!-- inner screen wrapper -->
+
+              <!-- page-nav -->
+          <nav class="page-nav">
+            <div class="nav-logo">
+              <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
+            </div>
+            <div class="page-nav-links">
+              <a href="index.html">home</a>
+              <a href="portfolio.html" class="active">Portfolio</a>
+              <a href="case-study.html">Case-study</a>
+              <a href="services-pricing.html">price</a>
+            </div>
+            <a href="index.html#contact-form" class="btn">Let's Talk</a>
+            <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        
+
+        <div id="navSentinel"></div>
+
+        <!-- PAGE HERO -->
+        <section class="section section--page-hero">
+          <p class="page-hero-label">Previous Work</p>
+          <h1 class="page-hero-title">Portfolio &<br><em>Samples</em></h1>
+          <p class="page-hero-desc">Designs and work I've done before that range over a wide spectrum.</p>
+        </section>
+
+<!-- logo and branding -->
+<section class="section section--logo">
+  <div class="container">
+    <div class="logo-section">
+
+  <div>
+      <img src="assets/img/portfolio/logo.webp" class="logo-section-img" alt="assortment of logo designs">
+    </div>
+
+      <div>
+        <p class="section-label">Corporate Identity</p>
+        <h2 class="section-title">Logo &<br><em>Brand Design</em></h2>
+     
+        <p class="packages-note">"A great corporate identity must perform flawlessly across 
+            the physical and digital divide. When I design a brand system, scalability is
+            engineered into the process from day one. Whether it's a favicon on a smartphone 
+            screen, an embroidered staff uniform, or a vector graphic on a local print shop's 
+            press, the visual balance remains pristine. I deliver complete, airtight identity 
+            packages—combining distinct typography pairings, precise color matrices, and
+            clear implementation rules so your business looks unified everywhere."</p>
+    </div>
+   </div>
+  </div>
+</section>
+
+ <!-- BUSINESS CARDS -->
+        <section class="section section--packages">
+          <div class="container">
+          <div class="packages-intro packages-intro--compact">
+            <div>
+              <p class="section-label">Brand Identity</p>
+              <h2 class="section-title">Business <br><em>Cards</em></h2>
+            </div>
+            <p class="portfolio-note">"A business card is often the only physical token left behind after 
+              a handshake, making it a critical extension of a brand's identity. I approach business card
+               design not just as a layout problem, but as a mini-branding exercise. My goal is to capture 
+               the essence of a company—its tone, industry authority, and personality—within a pocket-sized 
+               canvas. By balancing typography, negative space, and visual hierarchy, I ensure that 
+               the final design doesn't just display contact details, but immediately establishes 
+               credibility and memorability."</p>
+          </div>
+
+  <div class="swiper swiper-business-cards">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="assets/img/portfolio/the-witch-wizard.JPG" alt="Business card 1"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/bp.JPG" alt="Business card 2"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/li-bel.jpg" alt="Business card 3"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/indiguos-landscape.JPG" alt="Business card 4"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/crime-protector.JPG" alt="Business card 5"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/goldfields.jpg" alt="Business card 1"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/dutch-oven.JPG" alt="Business card 2"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/dutch-oven2.JPG" alt="Business card 3"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/pepper-crime.jpg" alt="Business card 4"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/convertions.jpg" alt="Business card 3"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/inbali.JPG" alt="Business card 5"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/martin.JPG" alt="Business card 4"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/martin2.JPG" alt="Business card 4"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/burberry.jpg" alt="Business card 5"></div>  
+  </div>
+ 
+</div>
+    </div>
+        </section>
+
+
+
+
+
+        
+        <!-- EXPLAINER section -->
+        <section class="section section--cta net excuse">
+          <h2 class="ex">About these Designs</h2>
+          <p class="explain">
+            These logos, business cards and flyers where originally done in 2007 using CorelDraw 
+            for local commercial print production. The website, waoumii.co.za, is an active ongoing
+            personal project and my journey.<br>
+            Today, my workflow, vector architecture and digital tools are primaraly based on open-source
+            and efficient platforms and combine nearly two decades of layout and design experience 
+            with modern, open-source performance.
+          </p>
+        </section>
+
+<!-- MENUS AND FLYERS -->
+        <section class="section section--packages">
+          <div class="container">
+          <div class="packages-intro">
+            <div>
+              <p class="section-label">Corporate Assets</p>
+              <h2 class="section-title">Menus & <br><em>Flyers</em></h2>
+            </div>
+            <p class="portfolio-note">"Menus and flyers are a business's direct point of 
+              contact with a customer, meaning layout clarity translates directly to 
+              revenue. I design print assets with strict visual hierarchy and scanning 
+              efficiency in mind—ensuring items are logically grouped, typography is 
+              razor-sharp under restaurant lighting, and pricing structures are clean 
+              and transparent. Every layout is structured from the ground up to guide 
+              the customer's eye exactly where it needs to go."</p>
+          </div>
+
+  <div class="swiper swiper-restaurant-menu">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="assets/img/portfolio/uncle-fawzi-front.jpg" alt="menu 1"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/uncle-fawzi-back.jpg" alt="Menu 2"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/pikkies-menu-front.JPG" alt="Menu 3"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/pikkies-menu-back.JPG" alt="Menu 4"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/casanova-front.JPG" alt="Menu 5"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/casanova-back.JPG" alt="Menu 6"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/barberton-moringa-flyer.JPG" alt="Flyer 1"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/barberton-moringa-packet.JPG" alt="Flyer 2"></div>
+    <div class="swiper-slide"><img src="assets/img/portfolio/picture-perfect.jpg" alt="Flyer 3"></div>
+
+  </div>
+  
+</div>
+
+          </div>
+        </section>
+
+        <!-- coreDrive Engine -->
+<section class="section section--cta top">
+       <div class="core-container">
+              
+         <h2>CoreDrive Engine<br><em>included</em></h2>
+         <p>Creative<strong> Imagination</strong></p>
+          <img src="assets/img/icons/coreDesign-Engine.png" alt="Imagination Icon" class="my-icon">
+                     
+      <p>Generating original conceptual frameworks, troubleshooting complex layouts,
+                <br>and dreaming up original ideas.</p>
+         
+         </div>       
+</section>
+
+   <!-- waoumii case-study -->     
+<section class="outer-overview">
+    <div class="inner-overview">
+             <p class="section-label">Case-study: wordPress eCommerce website</p>
+          <h2 class="section-title">WooCommerce, <br><em> Portfolio & Maker Hub</em></h2>
+
+        <p>Rather than isolating e-commerce, portfolio, and hardware development 
+          into fragmented sites, this build consolidates a diverse catalog into 
+          one cohesive hub. The refactored structure seamlessly balances physical 
+          product sales (apparel and posters), instant digital fulfillment for 
+          downloadable files, and direct client inquiries for custom web
+           development and design—all while highlighting personal engineering
+            projects under a single, well-organized umbrella.</p> <br>
+            <p class="waoumii-text">Visit <a href="https://www.waoumii.co.za" class="waoumii-link">waoumii.co.za</a> to view the site</p>   
+        </div>
+
+    <div class="overview-image-block">
+        <a href="https://www.waoumii.co.za/"><img src="assets/img/waoumii.png" 
+        alt="waoumii.co.za" class="overview-img"></a>
+    </div>
+    
+</section>
+
+        <!-- PROCESS -->
+        <section class="section section--process" id="process">
+          <div class="container">
+          <p class="section-label">How It Works</p>
+          <h2 class="section-title">My Design<br><em>Process</em></h2>
+          <div class="grid grid--5 grid--steps">
+            <div class="card card--step">
+              <div class="step-num">01</div>
+              <div class="step-title">Discovery</div>
+              <div class="step-desc">We chat about your business, audience, and goals. I ask the right questions so I understand what success looks like for you.</div>
+            </div>
+          
+            <div class="card card--step">
+              <div class="step-num">02</div>
+              <div class="step-title">Research</div>
+              <div class="step-desc">I study your competitors and build a moodboard of visual directions. You approve the direction before any design begins.</div>
+            </div>
+           
+            <div class="card card--step">
+              <div class="step-num">03</div>
+              <div class="step-title">Design</div>
+              <div class="step-desc">I develop 2–3 concepts and present them with clear reasoning — why each choice serves your brand.</div>
+            </div>
+           
+            <div class="card card--step">
+              <div class="step-num">04</div>
+              <div class="step-title">Refine</div>
+              <div class="step-desc">Your feedback shapes the final result. Two rounds of revisions are included in every package.</div>
+            </div>
+       
+            <div class="card card--step">
+              <div class="step-num">05</div>
+              <div class="step-title">Deliver</div>
+              <div class="step-desc">You receive all final files in every format you'll ever need, plus a brand guide for consistent future use.</div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+  
+        <!-- CTA section -->
+        <section class="section section--cta top">
+          <h2>Want to Know More?</h2>
+          <p>Design is more than Art because it creates Functional Purpose and Direction</p>
+          <div class="cta-actions">
+            <a href="index.html#contact-form" class="btn btn--lg">Let's Chat!</a>
+            <a href="services-pricing.html" class="btn btn--ghost btn--lg">How much?</a>
+          </div>
+        </section>
+ 
+        <!-- FAQ -->
+        <section class="section section--faq">
+          <div class="container">
+          <p class="section-label">Questions</p>
+          <h2 class="section-title">Frequently<br><em>Asked</em></h2>
+          <div class="grid grid--2 grid--faq">
+
+            <div class="card card--faq">
+  <button class="faq-q" type="button">
+    How long does a logo take?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>Typically 5-7 business days from the moment I receive your completed questionnaire. 
+      Rush turnarounds can be arranged for an additional fee.</p>
+  </div>
+</div>
+
+           <div class="card card--faq">
+  <button class="faq-q" type="button">
+    Do I need to pay upfront?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>A 50% deposit is required to secure your spot and start the project. 
+                The remaining 50% is due before final files are delivered.</p>
+  </div>
+</div>
+
+          <div class="card card--faq">
+  <button class="faq-q" type="button">
+    What if I need more revisions?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>Two rounds are included. Additional revisions beyond that are billed at 
+                R350 per round — kept simple and transparent.</p>
+  </div>
+</div>
+
+        <div class="card card--faq">
+  <button class="faq-q" type="button">
+   Will I own the final designs?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>Absolutely. Once full payment is received, all intellectual property 
+                transfers to you. The work is entirely yours.</p>
+  </div>
+</div>
+            
+       <div class="card card--faq">
+  <button class="faq-q" type="button">
+   What do you need from me to start?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>A completed brief/questionnaire, your deposit, and any existing brand 
+                materials you have. I'll send you everything you need once we agree to work together.</p>
+  </div>
+</div>        
+
+     <div class="card card--faq">
+  <button class="faq-q" type="button">
+  How long does a website take to build?
+    <span class="faq-icon" aria-hidden="true"></span>
+  </button>
+  <div class="faq-a">
+    <p>A standard WordPress site takes 2-3 weeks. eCommerce projects typically 
+                take 4-6 weeks depending on the number of products and complexity.</p>
+  </div>
+</div>      
+           </div>
+          </div>
+        </section>
+
+        <!-- CTA STRIP -->
+        <section class="section section--cta">
+          <h2>Ready to build something<br><em>beautiful?</em></h2>
+          <p>Let's chat about your project. No pressure, no jargon — just a straightforward conversation about what you need.</p>
+          <div class="cta-actions">
+            <a href="index.html#contact" class="btn btn--lg">Get A Free Quote</a>
+            <a href="index.html#services" class="btn btn--ghost btn--lg">View My Work</a>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+          <div class="footer-logo">Pieter <span>Coetzer</span></div>
+          <div class="footer-copy">© 2026 Pieter Coetzer. All rights reserved.</div>
+          <div class="footer-socials">
+            <a href="#" class="footer-social">Dr</a>
+            <a href="https://www.linkedin.com/in/coetzr69/" class="footer-social">in</a>
+            <a href="https://www.fiverr.com/coetzer69/" class="footer-social">fi</a>
+            <a href="https://www.behance.net/coetzer694ebb" class="footer-social">Be</a>
+          </div>
+        </footer>
+
+      </div><!-- end of screen-inner -->
+      <button class="screen-dim" id="screenDim" aria-label="Close menu"></button>
+    </div><!-- end of screen -->
+  </div><!-- end of layout -->
+
+  <script defer src="assets/js/main.js"></script>
+  <script src="assets/js/slide-nav.js"></script>
+<script src="assets/js/faq.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+// 1. INITIALIZE THE FIRST SLIDER (BUSINESS CARDS)
+const swiperCards = new Swiper('.swiper-business-cards', {
+  effect: 'slide',
+  grabCursor: true,
+  slidesPerView: 1,
+  loop: true,
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    769: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+  },
+});
+
+
+
+
+
+// 2. INITIALIZE THE SECOND SLIDER (RESTAURANT MENUS / FLYERS)
+const swiperMenus = new Swiper('.swiper-restaurant-menu', {
+  effect: 'slide',
+  grabCursor: true,
+autoHeight: true, // Container shrinks/grows with each image
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  loop: true,
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  pagination: {
+    el: '.swiper-restaurant-menu .swiper-pagination',
+    clickable: true,
+  },
+});
+
+</script>
+</body>
+</html>

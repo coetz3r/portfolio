@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gordon's Bay Security — homepage rebuild</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #14171a;
+    --bg-darker: #0c0e10;
+    --bg-light: #faf9f6;
+    --bg-card: #ffffff;
+    --text-light: #f5f4f1;
+    --text-dim: #b7b4ad;
+    --text-body: #3a3936;
+    --text-muted: #767369;
+    --accent: #c23b2e;
+    --accent-dark: #93291f;
+    --gold: #c99a3c;
+    --border: rgba(255,255,255,0.14);
+    --border-soft: rgba(20,20,18,0.1);
+    --radius: 10px;
+    --header-h: 76px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-body);
+    background: var(--bg-light);
+  }
+  h1, h2, h3, .brand, nav a, .dropdown-toggle, .btn {
+    font-family: 'Archivo', sans-serif;
+  }
+  section { scroll-margin-top: var(--header-h); }
+  a { text-decoration: none; color: inherit; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    background: transparent;
+    transition: background-color .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .site-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 140%;
+    background: linear-gradient(to bottom, rgba(8,9,10,0.65), rgba(8,9,10,0));
+    z-index: -1;
+    opacity: 1;
+    transition: opacity .35s ease;
+    pointer-events: none;
+  }
+  .site-header.scrolled {
+    background: rgba(12,14,16,0.96);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .site-header.scrolled::before { opacity: 0; }
+  .header-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    color: var(--text-light);
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .brand span { color: var(--gold); }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .main-nav > a {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: 0.01em;
+    padding: 8px 0;
+    position: relative;
+  }
+  .main-nav > a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width .2s ease;
+  }
+  .main-nav > a:hover::after { width: 100%; }
+
+  .dropdown { position: relative; }
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 8px 0;
+  }
+  .dropdown-toggle svg {
+    width: 11px; height: 11px;
+    transition: transform .2s ease;
+  }
+  .dropdown-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+  .dropdown-panel {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    width: 300px;
+    background: var(--bg-darker);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .dropdown-panel.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-panel a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-light);
+  }
+  .dropdown-panel a:hover { background: rgba(255,255,255,0.06); }
+  .dropdown-panel a strong {
+    display: block;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .dropdown-panel a span {
+    display: block;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-top: 2px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 36px; height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .menu-toggle span {
+    width: 22px; height: 2px;
+    background: var(--text-light);
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-panel {
+    position: fixed;
+    top: var(--header-h); left: 0; right: 0;
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border);
+    padding: 8px 20px 18px;
+    display: none;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+    z-index: 99;
+  }
+  .mobile-panel.open { max-height: 70vh; overflow-y: auto; }
+  .mobile-panel a, .mobile-accordion-toggle {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border);
+    background: none;
+    border-left: none; border-right: none; border-top: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Archivo', sans-serif;
+  }
+  .mobile-accordion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease;
+  }
+  .mobile-accordion.open { max-height: 240px; }
+  .mobile-accordion a {
+    border-bottom: none;
+    padding: 11px 4px 11px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('img/gb-hero.png');
+    
+    }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8,9,10,0.15) 0%, rgba(8,9,10,0.55) 55%, rgba(8,9,10,0.92) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+    width: 100%;
+  }
+  .hero-inner { max-width: 520px; margin-right: auto; }
+  .eyebrow {
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .hero h1 {
+    color: var(--text-light);
+    font-size: clamp(30px, 4.4vw, 46px);
+    font-weight: 800;
+    line-height: 1.18;
+    margin: 0 0 26px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 13px 26px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--accent-dark); }
+
+  /* ---------- About ---------- */
+  .about { padding: 96px 28px; background: var(--bg-light); }
+  .about-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .about h2, .services h2, .contact h2 { font-size: 28px; font-weight: 800; margin: 0 0 6px; }
+  .section-label {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .about p { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin: 0 0 14px; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  .stat { background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 18px; }
+  .stat strong { display: block; font-size: 22px; font-weight: 800; font-family: 'Archivo', sans-serif; }
+  .stat span { font-size: 13px; color: var(--text-muted); }
+
+  /* ---------- Services ---------- */
+  .services { padding: 96px 28px; background: #f1efe9; }
+  .services-inner { max-width: 1180px; margin: 0 auto; }
+  .services-head { margin-bottom: 40px; }
+  .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    border-left: 3px solid var(--accent);
+  }
+  .service-card h3 { font-size: 17px; font-weight: 700; margin: 14px 0 8px; }
+  .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+  .service-icon {
+    width: 60%; height: 60%;
+    border-radius: 8px;
+    background: rgba(194,59,46,0.1);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800;
+    font-family: 'Archivo', sans-serif;
+  }
+.service-icon img {
+    width: 85%;          /* Occupies 60% of the fluid icon box */
+    height: 85%;
+    object-fit: contain; /* Keeps the vector graphic crisp and un-warped */
+    object-position: center; /* Locks the pixel center of the AVIF to the grid flex point */
+    display: block;
+
+}
+
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 96px 28px; background: var(--bg-dark); text-align: center; }
+  .contact h2 { color: var(--text-light); }
+  .contact .section-label { color: var(--gold); }
+  .contact p { color: var(--text-dim); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+
+  footer { background: var(--bg-darker); color: var(--text-dim); text-align: center; 
+    padding: 28px; font-size: 13px; }
+
+  @media (max-width: 860px) {
+    .main-nav, .dropdown { display: none; }
+    .menu-toggle { display: flex; }
+    .mobile-panel { display: flex; }
+    .about-inner { grid-template-columns: 1fr; gap: 30px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-inner { max-width: 100%; }
+    .hero{ background-position: 40% center;}
+  }
+  @media (max-width: 520px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand">Gordon's Bay <span>Security</span></a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="servicesToggle" aria-haspopup="true" aria-expanded="false">
+          Services
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dropdown-panel" id="servicesPanel" role="menu">
+          <a href="#armed-response" role="menuitem"><strong>Armed response</strong><span>Rapid on-site dispatch</span></a>
+          <a href="#training-academy" role="menuitem"><strong>Training academy</strong><span>Security &amp; firearms courses</span></a>
+          <a href="#gb-med" role="menuitem"><strong>GB Med</strong><span>Ambulance &amp; medical response</span></a>
+          <a href="#alarm-systems" role="menuitem"><strong>Alarm systems</strong><span>Sales &amp; installation</span></a>
+        </div>
+      </div>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#about">About</a>
+    <button class="mobile-accordion-toggle" id="mobileServicesToggle" aria-expanded="false">
+      Services
+      <svg viewBox="0 0 12 8" width="11" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="mobile-accordion" id="mobileAccordion">
+      <a href="#armed-response">Armed response</a>
+      <a href="#training-academy">Training academy</a>
+      <a href="#gb-med">GB Med</a>
+      <a href="#alarm-systems">Alarm systems</a>
+    </div>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-inner">
+        <p class="eyebrow">Gordon's Bay Security</p>
+        <h1>Protecting Gordon's Bay community for the last 24 years</h1>
+        <a href="#contact" class="btn">Get a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div>
+        <p class="section-label">About us</p>
+        <h2>Locally based, fully accountable</h2>
+      </div>
+      <div>
+        <p>Gordon's Bay Security has operated in this community since 2001, growing from an armed response company into a full security group covering training, medical response and alarm installation. Every officer and technician is registered with PSIRA, the industry's regulatory body.</p>
+        <div class="stat-row">
+          <div class="stat"><strong>23+ yrs</strong><span>Operating since 2001</span></div>
+          <div class="stat"><strong>PSIRA</strong><span>Registered &amp; compliant</span></div>
+          <div class="stat"><strong>24/7</strong><span>Armed response dispatch</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services-inner">
+      <div class="services-head">
+        <p class="section-label">What we do</p>
+        <h2>Four divisions, one call away</h2>
+      </div>
+      <div class="service-grid">
+
+
+        <div class="service-card" id="armed-response">
+          <div class="service-icon">
+          <img src="img/gb-logo.avif" alt="Armed Response Shield Icon">
+
+          </div>
+          <h3>Armed Response</h3>
+          <p>Rapid on-site dispatch when your alarm is triggered, day or night.</p>
+        </div>
+
+
+        <div class="service-card" id="training-academy">
+          <div class="service-icon">
+             <img src="img/gb-med.avif" alt="Ambulance Service Shield Icon">
+          </div>
+          <h3>Ambulance Service</h3>
+          <p>Ambulance and emergency medical response for the Gordon's Bay area.</p>
+        </div>
+        <div class="service-card" id="gb-med">
+          <div class="service-icon">
+             <img src="img/gb-spec.avif" alt="Special Unit Shield Icon">
+            </div>
+          <h3>Special Unit</h3>
+          <p>PSIRA-accredited security and firearms courses for individuals and companies.</p>
+        </div>
+        <div class="service-card" id="alarm-systems">
+          <div class="service-icon">
+             <img src="img/gb-air.avif" alt="Armed Response Shield Icon">
+          </div>
+          <h3>Alarm Systems</h3>
+          <p>Sales, installation and support for residential and commercial alarms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="section-label">Get in touch</p>
+    <h2>Talk to the team</h2>
+    <p>Call us directly or send a message and we'll get back to you within one business day.</p>
+    <a href="tel:0218560214" class="btn">021 856 0214</a>
+  </section>
+
+</main>
+
+<footer>&copy; Gordon's Bay Security — homepage rebuild</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  function setupDropdown(toggleId, panelId, isAccordion) {
+    const toggle = document.getElementById(toggleId);
+    const panel = document.getElementById(panelId);
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = panel.classList.contains('open');
+      panel.classList.toggle('open', !open);
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+    if (!isAccordion) {
+      document.addEventListener('click', (e) => {
+        if (!panel.contains(e.target) && e.target !== toggle) {
+          panel.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panel.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  }
+  setupDropdown('servicesToggle', 'servicesPanel', false);
+  setupDropdown('mobileServicesToggle', 'mobileAccordion', true);
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  menuToggle.addEventListener('click', () => {
+    const open = mobilePanel.classList.contains('open');
+    mobilePanel.classList.toggle('open', !open);
+    menuToggle.setAttribute('aria-expanded', String(!open));
+  });
+
+  document.querySelectorAll('.mobile-panel a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
