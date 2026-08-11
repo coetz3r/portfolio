@@ -114,7 +114,7 @@
   </div>
 
   <script>
-  const NAMESPACE = 'waoumii-portfolio';
+ const NAMESPACE = 'waoumii-portfolio';
   
   const trackedPages = [
     'home',
@@ -130,8 +130,7 @@
 
     for (const page of trackedPages) {
       try {
-        // Read current count without incrementing
-        const res = await fetch(`https://counterapi.com/api/v1/${NAMESPACE}/${page}/get`);
+        const res = await fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${page}`);
         const data = await res.json();
         const count = data.value !== undefined ? data.value : 0;
 

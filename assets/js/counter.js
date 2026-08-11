@@ -6,7 +6,28 @@
     pageKey = 'home';
   }
 
-  // Bumps count by 1 in background
-  fetch(`https://counterapi.com/api/v1/${NAMESPACE}/${pageKey}/up`)
+  fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${pageKey}`)
     .catch(err => console.error('Tracker error:', err));
 })();
+
+// === load into browser to start counter ======= 
+/*
+{
+  const ns = 'waoumii-portfolio';
+  const pages = ['home', 'portfolio', 'creative', 'case-study', 'project'];
+
+  pages.forEach(async (page) => {
+    try {
+      const res = await fetch(`https://api.countapi.xyz/hit/${ns}/${page}`);
+      const data = await res.json();
+      console.log(`Initialized ${page}:`, data);
+    } catch (err) {
+      console.error(`Error with ${page}:`, err);
+    }
+  });
+}
+*/
+
+
+
+
