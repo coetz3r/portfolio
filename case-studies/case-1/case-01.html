@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-dark: #14171a;
-    --bg-darker: #0c0e10;
-    --bg-light: #faf9f6;
-    --bg-card: #ffffff;
+    --bg-main-dark: #14171a;
+    --bg-main-darker: #0c0e10;
+    --bg-main-light: #faf9f6;
+    --bg-main-card: #ffffff;
     --text-light: #f5f4f1;
     --text-dim: #b7b4ad;
     --text-body: #3a3936;
@@ -19,8 +19,8 @@
     --accent: #c23b2e;
     --accent-dark: #93291f;
     --gold: #c99a3c;
-    --border: rgba(255,255,255,0.14);
-    --border-soft: rgba(20,20,18,0.1);
+    --border-subtle: rgba(255,255,255,0.14);
+    --border-subtle-soft: rgba(20,20,18,0.1);
     --radius: 10px;
     --header-h: 76px;
   }
@@ -30,7 +30,7 @@
     margin: 0;
     font-family: 'Inter', -apple-system, sans-serif;
     color: var(--text-body);
-    background: var(--bg-light);
+    background: var(--bg-main-light);
   }
   h1, h2, h3, .brand, nav a, .dropdown-toggle, .btn {
     font-family: 'Archivo', sans-serif;
@@ -62,7 +62,7 @@
   }
   .site-header.scrolled {
     background: rgba(12,14,16,0.96);
-    box-shadow: 0 1px 0 var(--border);
+    box-shadow: 0 1px 0 var(--border-subtle);
   }
   .site-header.scrolled::before { opacity: 0; }
   .header-inner {
@@ -132,8 +132,8 @@
     left: 50%;
     transform: translateX(-50%) translateY(-6px);
     width: 300px;
-    background: var(--bg-darker);
-    border: 1px solid var(--border);
+    background: var(--bg-main-darker);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius);
     padding: 8px;
     opacity: 0;
@@ -193,8 +193,8 @@
   .mobile-panel {
     position: fixed;
     top: var(--header-h); left: 0; right: 0;
-    background: var(--bg-darker);
-    border-top: 1px solid var(--border);
+    background: var(--bg-main-darker);
+    border-top: 1px solid var(--border-subtle);
     padding: 8px 20px 18px;
     display: none;
     flex-direction: column;
@@ -209,7 +209,7 @@
     font-weight: 600;
     font-size: 15px;
     padding: 14px 4px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-subtle);
     background: none;
     border-left: none; border-right: none; border-top: none;
     width: 100%;
@@ -287,7 +287,7 @@
   .btn:hover { background: var(--accent-dark); }
 
   /* ---------- About ---------- */
-  .about { padding: 96px 28px; background: var(--bg-light); }
+  .about { padding: 96px 28px; background: var(--bg-main-light); }
   .about-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
   .about h2, .services h2, .contact h2 { font-size: 28px; font-weight: 800; margin: 0 0 6px; }
   .section-label {
@@ -300,7 +300,7 @@
   }
   .about p { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin: 0 0 14px; }
   .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
-  .stat { background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 18px; }
+  .stat { background: #fff; border: 1px solid var(--border-subtle-soft); border-radius: var(--radius); padding: 18px; }
   .stat strong { display: block; font-size: 22px; font-weight: 800; font-family: 'Archivo', sans-serif; }
   .stat span { font-size: 13px; color: var(--text-muted); }
 
@@ -310,8 +310,8 @@
   .services-head { margin-bottom: 40px; }
   .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-soft);
+    background: var(--bg-main-card);
+    border: 1px solid var(--border-subtle-soft);
     border-radius: var(--radius);
     padding: 26px 22px;
     border-left: 3px solid var(--accent);
@@ -338,12 +338,12 @@
 
 
   /* ---------- Contact ---------- */
-  .contact { padding: 96px 28px; background: var(--bg-dark); text-align: center; }
+  .contact { padding: 96px 28px; background: var(--bg-main-dark); text-align: center; }
   .contact h2 { color: var(--text-light); }
   .contact .section-label { color: var(--gold); }
   .contact p { color: var(--text-dim); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
 
-  footer { background: var(--bg-darker); color: var(--text-dim); text-align: center; 
+  footer { background: var(--bg-main-darker); color: var(--text-dim); text-align: center; 
     padding: 28px; font-size: 13px; }
 
   @media (max-width: 860px) {

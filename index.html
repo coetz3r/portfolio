@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pieter Coetzer Portfolio</title>
 
-  
-<!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
- <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
-
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/slide.css">
   <link rel="stylesheet" href="assets/css/animations.css">
  
 <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
@@ -44,58 +42,49 @@
       <div class="label">Menu</div>
 
       <nav>
-        <a href="index.html" id="firstMenuLink" style="--i: 1;">
+        <a href="portfolio.html" id="firstMenuLink" style="--i: 1;">
           <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
             <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
             <line x1="7" y1="7" x2="7.01" y2="7"></line>
           </svg>
-          Home
+          portfolio
         </a>
-        <a href="portfolio.html#process" style="--i: 2;">
+        <a href="projects.html" style="--i: 2;">
           <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
             <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
           </svg>
-          My Process
+          projects
         </a>
-        <a href="portfolio.html" style="--i: 3;">
+        <a href="creative.html" style="--i: 3;">
           <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
           </svg>
-          Portfolio
+          creative
         </a>
 
-      <a href="case-study.html" style="--i: 4;">
-          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      <a href="services-pricing.html" style="--i: 4;">
+            <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
           </svg>
-          case-study
+          services
         </a>
 
-        <a href="services-pricing.html" style="--i: 5;">
+        <a href="index.html#about" style="--i: 5;">
           <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points=" 2 17 12 22 22 17"></polygon>
             <polygon points="2 12 12 17 22 12"></polygon>
           </svg>
-          Price
+          about
         </a>
-        <a href="#about-section" style="--i: 6;">
-          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-          </svg>
-          About
-        </a>
-      </nav>
-
+   </nav>
       <a href="#contact-form" style="--i: 7;" class="menu-btn">Lets Talk</a>
       <span class="logo under">
         <h5>pieter coetzer</h5>portfolio
@@ -110,10 +99,12 @@
           <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent">coetzer</span></a>
         </div>
         <div class="nav-links">
-          <a href="index.html" class="active">Home</a>
+          <!--<a href="index.html" class="active">Home</a>-->
           <a href="portfolio.html">portfolio</a>
-          <a href="case-study.html">case study</a>
-          <a href="services-pricing.html">price</a>
+          <a href="projects.html">projects</a>
+          <a href="creative.html">projects</a>
+          <a href="services-pricing.html">services</a>
+          <a href="index.html#about">about</a>
         </div>
         <a href="#contact-form" class="btn">Let's Talk</a>
         <button class="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -132,10 +123,12 @@
             </div>
 
             <div class="hero-nav-links">
-              <a href="index.html" class="active">Home</a>
-              <a href="portfolio.html">Portfolio</a>
-              <a href="case-study.html">Case-study</a>
-              <a href="services-pricing.html">price</a>
+             
+              <a href="portfolio.html">portfolio</a>
+              <a href="projects.html">projects</a>
+              <a href="art.html">creative</a>
+              <a href="services-pricing.html">services</a>
+              <a href="index.html#about">about</a>
 
               <a href="#contact-form" class="btn">Let's Talk!</a>
             </div><!-- end of hero-nav -->
@@ -359,9 +352,7 @@
             </div>
           </section><!-- end of tools -->
 
-   <!-- TESTAMONIALS REMOVED -->
-
-          <section class="section section--about" id="about-section">
+          <section class="section section--about" id="about">
             <div class="container">
               <div class="grid grid--about">
 
@@ -512,7 +503,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/slide-nav.js"></script>
-
+  <script src="assets/js/counter.js"></script>
  
 </body>
 

@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
 
-  
-<!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
- <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
+ <link rel="stylesheet" href="assets/css/style.css">
+ <link rel="stylesheet" href="assets/css/slide.css">
 
 <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
@@ -39,34 +38,48 @@
   <div class="label">Menu</div>
   
   <nav>
-    <a href="index.html" id="firstMenuLink" style="--i: 1;">
-      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-      home
-    </a>
-    <a href="#process" style="--i: 2;">
-      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-      My Process
-    </a>
-    <a href="portfolio.html" style="--i: 3;">
-      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-      Portfolio
-    </a>
-          <a href="case-study.html" style="--i: 4;">
+   <a href="portfolio.html" id="firstMenuLink" style="--i: 1;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          portfolio
+        </a>
+        <a href="projects.html" style="--i: 2;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          projects
+        </a>
+        <a href="creative.html" style="--i: 3;">
           <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
           </svg>
-          case-study
+          creative
         </a>
-    <a href="services-pricing.html" style="--i: 5;">
-      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points="2 17 12 22 22 17"></polygon><polygon points="2 12 12 17 22 12"></polygon></svg>
-      Price
-    </a>
-    <a href="index.html#about-section" style="--i: 6;">
-      <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-      About
-    </a>
+
+      <a href="services-pricing.html" style="--i: 4;">
+            <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          services
+        </a>
+
+        <a href="index.html#about" style="--i: 5;">
+          <svg class="menu-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polygon points=" 2 17 12 22 22 17"></polygon>
+            <polygon points="2 12 12 17 22 12"></polygon>
+          </svg>
+          about
+        </a>
   </nav>
 
   <a href="index.html#contact-form" style="--i: 7;" class="menu-btn">Let's Talk</a>
@@ -81,10 +94,11 @@
           <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
         </div>
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="portfolio.html" class="active">Portfolio</a>
-          <a href="case-study.html">Case-study</a>
-          <a href="services-pricing.html">Price</a>
+          <a href="portfolio.html">portfolio</a>
+          <a href="projects.html">projects</a>
+          <a href="creative.html">creative</a>
+          <a href="services-pricing.html">services</a>
+          <a href="index.html#about">about</a>
         </div>
         <a href="index.html#contact-form" class="btn">Hire Me!</a>
         <button class="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -102,10 +116,11 @@
               <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
             </div>
             <div class="page-nav-links">
-              <a href="index.html">home</a>
-              <a href="portfolio.html" class="active">Portfolio</a>
-              <a href="case-study.html">Case-study</a>
-              <a href="services-pricing.html">price</a>
+          <a href="portfolio.html">portfolio</a>
+          <a href="projects.html">projects</a>
+          <a href="creative.html">creative</a>
+          <a href="services-pricing.html">services</a>
+          <a href="index.html#about">about</a>
             </div>
             <a href="index.html#contact-form" class="btn">Let's Talk</a>
             <button class="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -138,7 +153,7 @@
         <p class="section-label">Corporate Identity</p>
         <h2 class="section-title">Logo &<br><em>Brand Design</em></h2>
      
-        <p class="packages-note">"A great corporate identity must perform flawlessly across 
+        <p class="body-text">"A great corporate identity must perform flawlessly across 
             the physical and digital divide. When I design a brand system, scalability is
             engineered into the process from day one. Whether it's a favicon on a smartphone 
             screen, an embroidered staff uniform, or a vector graphic on a local print shop's 
@@ -158,7 +173,7 @@
               <p class="section-label">Brand Identity</p>
               <h2 class="section-title">Business <br><em>Cards</em></h2>
             </div>
-            <p class="portfolio-note">"A business card is often the only physical token left behind after 
+            <p class="body-text">"A business card is often the only physical token left behind after 
               a handshake, making it a critical extension of a brand's identity. I approach business card
                design not just as a layout problem, but as a mini-branding exercise. My goal is to capture 
                the essence of a company—its tone, industry authority, and personality—within a pocket-sized 
@@ -188,11 +203,6 @@
 </div>
     </div>
         </section>
-
-
-
-
-
         
         <!-- EXPLAINER section -->
         <section class="section section--cta net excuse">
@@ -215,7 +225,7 @@
               <p class="section-label">Corporate Assets</p>
               <h2 class="section-title">Menus & <br><em>Flyers</em></h2>
             </div>
-            <p class="portfolio-note">"Menus and flyers are a business's direct point of 
+            <p class="body-text">"Menus and flyers are a business's direct point of 
               contact with a customer, meaning layout clarity translates directly to 
               revenue. I design print assets with strict visual hierarchy and scanning 
               efficiency in mind—ensuring items are logically grouped, typography is 
@@ -263,7 +273,7 @@
              <p class="section-label">Case-study: wordPress eCommerce website</p>
           <h2 class="section-title">WooCommerce, <br><em> Portfolio & Maker Hub</em></h2>
 
-        <p>Rather than isolating e-commerce, portfolio, and hardware development 
+        <p class="body-text">Rather than isolating e-commerce, portfolio, and hardware development 
           into fragmented sites, this build consolidates a diverse catalog into 
           one cohesive hub. The refactored structure seamlessly balances physical 
           product sales (apparel and posters), instant digital fulfillment for 
@@ -301,7 +311,7 @@
             <div class="card card--step">
               <div class="step-num">03</div>
               <div class="step-title">Design</div>
-              <div class="step-desc">I develop 2–3 concepts and present them with clear reasoning — why each choice serves your brand.</div>
+              <div class="step-desc">I develop 2-3 concepts and present them with clear reasoning — why each choice serves your brand.</div>
             </div>
            
             <div class="card card--step">
@@ -319,17 +329,56 @@
           </div>
         </section>
 
-  
-        <!-- CTA section -->
-        <section class="section section--cta top">
-          <h2>Want to Know More?</h2>
-          <p>Design is more than Art because it creates Functional Purpose and Direction</p>
-          <div class="cta-actions">
-            <a href="index.html#contact-form" class="btn btn--lg">Let's Chat!</a>
-            <a href="services-pricing.html" class="btn btn--ghost btn--lg">How much?</a>
-          </div>
-        </section>
- 
+  <section class="section--case-preview">
+  <div class="container">
+    <div class="grid grid--2 grid--case-preview">
+      
+      <!-- Left Column: Main Screenshot Link -->
+      <div class="case-preview-media">
+        <a href="moringa-barberton.html" class="case-main-link" title="View Moringa Case Study">
+          <img 
+            src="assets/img/moringa/Screenshot.png" 
+            alt="Moringa Project Main Screenshot" 
+            class="case-main-img" 
+            loading="lazy"
+          />
+        </a>
+      </div>
+
+      <!-- Right Column: Label, Heading, Description & Thumbnails -->
+      <div class="case-preview-content">
+        <span class="section-label">CASE STUDY // BRAND & GRAPHICS</span>
+        <h2 class="card-title">Moringa Brand Identity & Marketing Assets</h2>
+        
+        <p class="card-text">
+          A comprehensive visual design campaign for Moringa, combining high-impact 
+          promotional graphics, custom product flyers, capsule branding, and comic-style 
+          marketing assets tailored for multi-channel outreach.
+        </p>
+
+        <!-- Small Thumbnails at the Bottom -->
+        <div class="case-thumbnails">
+          <a href="clients/moringa-barberton.html">
+            <img src="assets/img/moringa/flyer.jpg" alt="Moringa Flyer" class="thumb-img" />
+          </a>
+          <a href="clients/moringa-barberton.html">
+            <img src="assets/img/moringa/capsule.jpg" alt="Moringa Capsule Packaging" class="thumb-img" />
+          </a>
+          <a href="clients/moringa-barberton.html">
+            <img src="assets/img/moringa/hulk.jpg" alt="Moringa Hulk Promo Graphic" class="thumb-img" />
+          </a>
+          <a href="clients/moringa-barberton.html">
+            <img src="assets/img/moringa/popeye.jpg" alt="Moringa Popeye Banner" class="thumb-img" />
+          </a>
+          <a href="clients/moringa-barberton.html">
+            <img src="assets/img/moringa/all2hav.jpg" alt="Moringa Asset" class="thumb-img" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
         <!-- FAQ -->
         <section class="section section--faq">
           <div class="container">
@@ -463,10 +512,6 @@ const swiperCards = new Swiper('.swiper-business-cards', {
   },
 });
 
-
-
-
-
 // 2. INITIALIZE THE SECOND SLIDER (RESTAURANT MENUS / FLYERS)
 const swiperMenus = new Swiper('.swiper-restaurant-menu', {
   effect: 'slide',
@@ -488,5 +533,6 @@ autoHeight: true, // Container shrinks/grows with each image
 });
 
 </script>
+<script src="assets/js/counter.js"></script>
 </body>
 </html>

@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>case-studies</title>
+  <title>projects</title>
 
    <link rel="stylesheet" href="assets/css/style2.css">
  <!-- cleanUp CSS --><link rel="stylesheet" href="assets/css/style.css">
  <!-- temp css --><link rel="stylesheet" href="assets/css/mobile.css">
+   <!-- magn'Motr --><link rel="stylesheet" href="assets/css/moto-style.css">
   <link rel="stylesheet" href="assets/css/slide.css">
     
    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
@@ -20,10 +21,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-</head>
 
+    <!-- Tell the browser where to resolve "three" and its addons -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "@dimforge/rapier3d-compat": "https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.12.0/rapier.es.js"
+        }
+      }
+    </script>
+
+  </head>
 <body>
-
+<!-- 
+  cd myFolder/WORKfolder/Projects/Active/portfolio
+  python3 -m http.server 8000
+-->
   <div class="layout" id="layout">
 
    <aside class="menu" id="menu"><!-- mobile menu -->
@@ -96,7 +111,7 @@
          <a href="index.html" class="nav-link-clean">pieter <span class="nav-link-accent-alt">coetzer</span></a>
         </div>
         <div class="nav-links">
-          <a href="portfolio.html">portfolio</a>
+           <a href="portfolio.html">portfolio</a>
           <a href="projects.html">projects</a>
           <a href="creative.html">projects</a>
           <a href="services-pricing.html">services</a>
@@ -137,38 +152,26 @@
         <!-- PAGE HERO -->
         <section class="section section--page-hero">
           <p class="page-hero-label">Build with Passion!</p>
-          <h1 class="page-hero-title">Case-<br><em>Studies</em></h1>
+          <h1 class="page-hero-title">Projects-<br><em>Page</em></h1>
           <p class="page-hero-desc">Building responsive, block-based e-commerce and web solutions 
             optimized for performance.</p>
         </section>
-
-    <!-- Simple Navigation Back to Index -->
-    <header class="site-header">
-        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
-    </header>
 
    <!-- overview -->     
 <section class="outer-overview">
     <div class="inner-overview">
              <p class="section-label">Overview</p>
-          <h2 class="section-title">Systems Audit &<br><em> Refactoring</em></h2>
+          <h2 class="section-title">Interactive 3D &<br><em> Mechanical Concepts</em></h2>
 
-        <p>The original site, a 2014 Wix build, treated every piece of information as equally 
-                important — five sub-businesses flattened into one three-level navigation, testimonials 
-                marked up as page headings, no single call to action anywhere on the page. There was no 
-                hierarchy telling a visitor what mattered most or what to do next.</p>
-                <p>The redesign starts from the opposite premise: one clear goal per page. 
-                  The homepage's function is to build trust fast and get a visitor to one
-                  action — get a quote — with everything else (the four divisions, the trust
-                   signals, the contact info) supporting that single goal rather 
-                   than competing with it.</p>
+        <p>Static images can't fully communicate mechanical flow, spatial dimensions, 
+          or mechanical kinematics. Using Three.js and custom shader logic, I render
+           functional 3D models with interactive OrbitControls, dynamic lighting, and 
+           real-time animation.</p>
+        <p>Bridging the gap between industrial design and modern web technology.
+           I build interactive 3D environments and real-time WebGL experiences 
+           that bring mechanical concepts, CAD assets, and complex kinetic models 
+           directly into the browser.</p>
     </div>
-
-    <div class="overview-image-block">
-        <a href="gbsec.html"><img src="case-studies/case-1/img/screenshot.png" 
-        alt="Legacy Site Audit Breakdown" class="overview-img"></a>
-    </div>
-
 
     <aside class="case-sidebar">
       <div class="sidebar-section">
@@ -211,7 +214,14 @@
         </div>
       </div>
     </aside>
+
 </section>
+    <main>
+        <div id="container3D"></div>
+    </main>
+
+
+
 
 
 <!-- VIEW PROJECT banner-->
@@ -224,31 +234,6 @@
             <a href="gbsec.html" class="btn btn--ghost btn--lg">Original</a>
           </div>
         </section>
-
-
-   <!-- waoumii case-study -->     
-<section class="outer-overview">
-    <div class="inner-overview">
-             <p class="section-label">Case-study: wordPress eCommerce website</p>
-          <h2 class="section-title">WooCommerce &<br><em> Maker Space</em></h2>
-
-        <p>Built as a unified digital ecosystem, waoumii.co.za integrates custom apparel 
-          retail, downloadable digital assets (PDFs, poster designs, and printables), 
-          and personal design & web development services into a single streamlined 
-          architecture. Beyond standard e-commerce, the platform serves as a central 
-          showcase and maker hub—bridging physical merchandise, custom client services,
-           and original engineering innovations like the magna'Motr project without 
-           cluttering the user experience.</p>  
-           <p class="waoumii-text">Visit <a href="https://www.waoumii.co.za" class="waoumii-link">waoumii.co.za</a> to view the site</p>    
-        </div>
-
-    <div class="overview-image-block">
-        <a href="https://www.waoumii.co.za/"><img src="assets/img/waoumii.png" 
-        alt="waoumii.co.za" class="overview-img"></a>
-    </div>
-</section>
-
-
 
  <!-- PROCESS - 5 design steps -->
         <section class="section section--process">
@@ -296,26 +281,14 @@
   <div class="case-study-layout">
     <main class="inner-case">
        <p class="section-label">Analizing Phase </p>
-          <h2 class="section-title">Initialisation &<br><em>Commencement</em></h2>
+          <h2 class="section-title">Interactive Mechanical &<br><em>Kinematic Simulation</em></h2>
       
-          <p>Every successful project begins with an intensive alignment phase. I deep-dive 
-            into your operational ecosystem, target demographic, and core commercial objectives. 
-            By auditing existing brand assets and asking deliberate, targeted questions, 
-            we uncover the exact technical and creative parameters required to build a 
-            layout that solves real business problems.</p>
+          <p>Overview: A web-first interactive 3D showcase designed to simulate mechanical 
+            assemblies and industrial concepts in real time without heavy plugins or video renders.</p>
         
-          <p>Once the parameters are clear, I translate that research into a strategic creative 
-            direction — a framework that dictates every visual decision before a single pixel 
-            is placed, so the design has a reason behind it rather than a vibe.</p>
-          <p>From there, I move into focused concept development. Rather than presenting scattershot options,
-            I build a small number of strong directions, each backed by the reasoning that ties it back to
-            your original objectives.</p>
-          <br>
-        <p><strong>This turns feedback into a structured conversation instead of a guessing game.</strong></p>
-          <br>
-          <p>The result isn't just a layout that looks finished — it's one that's been pressure-tested 
-            against the business problem we identified on day one, refined through iteration, and built 
-            to scale as your brand grows.</p>
+          <p>Execution: Modeled and textured clean assets in Blender, then optimized and rendered via
+             Three.js with baked lighting maps, smooth OrbitControls, and custom animation loops.</p>
+          <p>Tech Stack: Three.js, WebGL, JavaScript (ES6+), GLSL Shaders, Blender.</p>
     </main>
   </div>
 </div>
@@ -324,90 +297,28 @@
 <div class="outer-case">
   <div class="case-study-layout">
     <main class="inner-case">
-        <p class="section-label">Research & Discovery </p>
-          <h2 class="section-title">Discovery &<br><em>System Analysis</em></h2>
-        <p>Design should never happen in a vacuum. I conduct an architectural analysis 
-          of your immediate market competitors to identify visual opportunities and 
-          positioning gaps. This research is translated into a curated visual 
-          moodboard—establishing the typographic direction, contrast metrics, 
-          and geometric style parameters before a single line of vector production begins.</p>
+        <p class="section-label">Technical Capabilities </p>
+          <h2 class="section-title">Performance &<br><em>Asset Pipeline</em></h2>
+<ul class="tech-highlights-list">
+  <li>
+    <strong>Real-time WebGL Rendering:</strong> 
+    Lightweight 3D model delivery optimized for smooth 60fps browser performance.
+  </li>
+  <li>
+    <strong>CAD-to-Web Pipeline:</strong> 
+    Streamlined asset workflow from Blender geometry to web-ready GLTF/GLB formats.
+  </li>
+  <li>
+    <strong>Interactive Controls:</strong> 
+    Intuitive rotation, zooming, explosion views, and camera state transitions.
+  </li>
+  <li>
+    <strong>Baked Lighting & Shading:</strong> 
+    Optimized ambient occlusion and realistic surface materials for quick render times.
+  </li>
+</ul>
 
-        <p>Moving from theory to execution, I build out tailored, mathematically sound 
-          design variants. Rather than delivering arbitrary choices, every concept is
-           rigidly evaluated against proven UI/UX and print production principles.
-            When presented, each layout variation is backed by clear technical 
-            reasoning, demonstrating exactly how the spatial choices, color systems,
-             and typography serve your brand's authority.</p>
-      </main>
-  </div>
-</div>
-
-<!-- 3. Design & Create -->
-<div class="outer-case">
-  <div class="case-study-layout">
-    <main class="inner-case">
-
-        <p class="section-label">Design & Create </p>
-          <h2 class="section-title">Concept Engineering &<br><em>Development</em></h2>
-        <p>Moving from theory to execution, I build out tailored, mathematically sound design 
-          variants. Rather than delivering arbitrary choices, every concept is rigidly 
-          evaluated against proven UI/UX and print production principles. When presented,
-           each layout variation is backed by clear technical reasoning, demonstrating 
-           exactly how the spatial choices, color systems, and typography serve your 
-           brand's authority.</p>
-      </main>
-  </div>
-</div>
-
-
-<!-- PURE VANILLA banner-->
-<section class="section van">
-  <div class="vanilla-banner">
-  <div class="grid grid--3">
-
-  <img src="assets/img/icons/vanilla.png" alt="Vanilla Coding" class="my-ico2n">
-          <h2 class="vanilla-banner-title">Powered by<br>
-            <em class="vanilla-banner-em">Vanilla</em></h2>
-          <p class="vanilla-banner-p">Only The Base Flavour. <br>No Complex Frameworks in Development Process</p>
-
- </div>
-
-    </div>
-</section>
-
-
-
-<!-- 4. Refine & re-design -->
-<div class="outer-case">
-  <div class="case-study-layout">
-    <main class="inner-case">
-
-        <p class="section-label">Refine & re-design </p>
-          <h2 class="section-title">Iterative Refinement &<br><em>Stress-Testing</em></h2>
-
-        <p>Collaboration shapes the final high-performance asset. Using your direct feedback, 
-          we systematically refine the chosen direction to lock in absolute visual perfection.
-           Two comprehensive rounds of revision are structurally built into the package
-            pipeline, ensuring the final layout is thoroughly polished, scrutinized, 
-            and perfectly tuned to your expectations.</p>
-     
-      </main>
-  </div>
-</div>
-
-<!-- 5. Conclusion & Completion -->
-<div class="outer-case">
-  <div class="case-study-layout">
-    <main class="inner-case">
-        <p class="section-label">Conclusion & Completion </p>
-          <h2 class="section-title">Technical Handover &<br><em>Implementation</em></h2>
-
-        <p>A design is only as good as its deployment. Upon final approval, you receive a complete, 
-          production-ready asset delivery matrix containing all necessary file formats for digital
-           and commercial press usage (SVG, PNG, and high-resolution print vectors). This is 
-           accompanied by an integrated foundational style guide to ensure your brand's typography,
-            colors, and margins remain pristine and consistent for years to come.</p>
-      </main>
+     </main>
   </div>
 </div>
 
@@ -443,6 +354,7 @@
 
   <script defer src="assets/js/main.js"></script>
   <script src="assets/js/slide-nav.js"></script>
-<script src="assets/js/counter.js"></script>
+ <script type="module" src="assets/js/magn_Motr.js"></script>
+
 </body>
 </html>
