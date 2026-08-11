@@ -1,11 +1,12 @@
-  (function() {
-    // Unique namespace for your domain
-    const NAMESPACE = 'waoumii-site'; 
-    
-    // Automatically extract page name (e.g., 'index', 'portfolio', 'moringa')
-    let pageKey = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+(function() {
+  const NAMESPACE = 'waoumii-portfolio'; 
+  
+  let pageKey = window.location.pathname.split('/').pop().replace('.html', '').trim();
+  if (!pageKey || pageKey === 'index') {
+    pageKey = 'home';
+  }
 
-    // Log the hit (increments count by 1 in the background)
-    fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${pageKey}/up`)
-      .catch(err => console.error('Counter error:', err));
-  })();
+  // Bumps count by 1 in background
+  fetch(`https://counterapi.com/api/v1/${NAMESPACE}/${pageKey}/up`)
+    .catch(err => console.error('Tracker error:', err));
+})();

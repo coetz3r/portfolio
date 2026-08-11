@@ -114,48 +114,46 @@
   </div>
 
   <script>
-    const NAMESPACE = 'waoumii-site';
-    
-    // List all page keys you want to monitor
-    const trackedPages = [
-      'home',
-      'portfolio',
-      'creative',
-      'case-study',
-      'project'
-    ];
+  const NAMESPACE = 'waoumii-portfolio';
+  
+  const trackedPages = [
+    'home',
+    'portfolio',
+    'creative',
+    'case-study',
+    'project'
+  ];
 
-    async function loadStats() {
-      const tbody = document.getElementById('stats-body');
-      tbody.innerHTML = '';
+  async function loadStats() {
+    const tbody = document.getElementById('stats-body');
+    tbody.innerHTML = '';
 
-      for (const page of trackedPages) {
-        try {
-          // Get current count without incrementing
-          const res = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${page}`);
-          const data = await res.json();
-          const count = data.count !== undefined ? data.count : 0;
+    for (const page of trackedPages) {
+      try {
+        // Read current count without incrementing
+        const res = await fetch(`https://counterapi.com/api/v1/${NAMESPACE}/${page}/get`);
+        const data = await res.json();
+        const count = data.value !== undefined ? data.value : 0;
 
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td><code>${page}</code></td>
-            <td><span class="hit-count">${count}</span></td>
-          `;
-          tbody.appendChild(row);
-        } catch (err) {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td><code>${page}</code></td>
-            <td><span style="color: #f37b63;">0 (Not initialized)</span></td>
-          `;
-          tbody.appendChild(row);
-        }
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><code>${page}</code></td>
+          <td><span class="hit-count">${count}</span></td>
+        `;
+        tbody.appendChild(row);
+      } catch (err) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><code>${page}</code></td>
+          <td><span style="color: #f37b63;">0 (Not initialized)</span></td>
+        `;
+        tbody.appendChild(row);
       }
     }
+  }
 
-    // Load stats on page open
-    loadStats();
-  </script>
+  loadStats();
+</script>
 
 </body>
 </html>
