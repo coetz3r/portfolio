@@ -1,0 +1,94 @@
+/* ==========================================================================
+   SHOWCASE SECTION (rect5.png Layout)
+   ========================================================================== */
+
+/* Spacing between rows */
+.showcase-row {
+  margin-bottom: 60px;
+}
+
+/* Header spacing */
+.showcase-header {
+  margin-bottom: 12px;
+}
+
+/* Row 3: Align label/title to the right */
+.showcase-row--reverse .showcase-header {
+  text-align: right;
+}
+
+/* Base image control - shrinks .AI-img and keeps aspect ratio */
+.AI-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: contain;
+}
+
+/* ----------------------------------
+   ROW 1: FULL SIZE
+   ---------------------------------- */
+.showcase-row--full .showcase-media {
+  width: 100%;
+  max-height: 550px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+}
+
+.showcase-row--full .showcase-media .AI-img {
+  object-fit: cover;
+}
+
+/* ----------------------------------
+   ROWS 2, 3, 4: SPLIT / SMALLER
+   ---------------------------------- */
+.showcase-body {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Control width of the smaller image column */
+.showcase-row--split .showcase-media {
+  flex: 0 0 35%; /* Controls image container size */
+  max-width: 350px;
+}
+
+/* Description container takes remaining width */
+.showcase-row--split .showcase-desc {
+  flex: 1;
+}
+
+/* Block background behind description blocks (matching design concept) */
+.showcase-desc {
+  background-color: var(--bg-main-subtle);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ----------------------------------
+   MOBILE RESPONSIVE (MAX 768px)
+   ---------------------------------- */
+@media screen and (max-width: 768px) {
+  .showcase-body {
+    flex-direction: column;
+  }
+
+  /* Reset image widths for mobile */
+  .showcase-row--split .showcase-media {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Row 3: Put image above description on mobile, align text left */
+  .showcase-row--reverse .showcase-body {
+    flex-direction: column-reverse;
+  }
+
+  .showcase-row--reverse .showcase-header {
+    text-align: left;
+  }
+}

@@ -88,9 +88,12 @@
     .refresh-btn:hover {
       opacity: 0.9;
     }
+
   </style>
 </head>
 <body>
+
+
 
   <div class="container">
     <h1>Page Hit Analytics</h1>
@@ -113,20 +116,32 @@
     <button class="refresh-btn" onclick="loadStats()">Refresh Counts</button>
   </div>
 
-  <script>
- const NAMESPACE = 'waoumii-portfolio';
-  
+    <!-- Simple Navigation Back to Index -->
+    <hdiv class="site-header">
+        <a href="../index.html" class="back-link">&larr; Back to index</a>
+    </div>
+
+ <script>
+  // ===================================================
+  // CONFIG SEGMENT (Swap or toggle here)
+  // ===================================================
+  const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const NAMESPACE = IS_LOCAL ? 'waoumii-portfolio-dev' : 'waoumii-portfolio';
+
   const trackedPages = [
     'home',
-    'portfolio',
-    'creative',
-    'case-study',
-    'project'
+
   ];
 
+  // ===================================================
+  // ANALYTICS FETCH LOGIC
+  // ===================================================
   async function loadStats() {
     const tbody = document.getElementById('stats-body');
     tbody.innerHTML = '';
+
+    // Log active environment to browser console
+    console.log(`Fetching stats for namespace: [${NAMESPACE}]`);
 
     for (const page of trackedPages) {
       try {
@@ -144,7 +159,7 @@
         const row = document.createElement('tr');
         row.innerHTML = `
           <td><code>${page}</code></td>
-          <td><span style="color: #f37b63;">0 (Not initialized)</span></td>
+          <td><span style="color: #f37b63;">0 (Not Initialized)</span></td>
         `;
         tbody.appendChild(row);
       }

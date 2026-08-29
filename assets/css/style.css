@@ -243,10 +243,13 @@ li {
 .sticky-nav.visible { transform: translateY(0); }
 .sticky-nav .logo { color: var(--color-brand-primary); }
 .sticky-nav .nav-links a { color: var(--color-brand-primary); }
+/* Match the page-nav hover: no bottom line, just a color change */
+.sticky-nav .nav-links a::after { content: none; }
+.sticky-nav .nav-links a:hover { color: var(--accent, #739af0); }
 .sticky-nav .burger span { background: var(--color-brand-primary); }
 
 /* ---- PAGE MENU ---- */
-.page-nav { max-width: 1350px; margin: 0 auto; background-color: white; }
+.page-nav { max-width: 1350px; margin: 0 auto; background-color: white; border: none; }
 .page-nav-links a {  color: var(--color-brand-primary, #22469b);}
 .page-nav-links a:hover {  color: var(--accent, #739af0);}
 .page-nav .burger span {  background-color: var(--color-brand-primary);}
@@ -455,6 +458,43 @@ span.btn--outline {
   flex-wrap: wrap; 
  
   }
+
+
+/* Container Box - PAGE LINK */
+#projects-link .container {
+  background-color: #ffffff;
+  border: 1px solid #dcdfe6;
+  border-radius: 12px;
+  padding: 24px 32px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px; /* Adjust based on your layout width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* General Text Inside Container */
+#projects-link .container {
+  color: #64748b; /* Soft muted text color */
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Darker & Larger Text Link */
+#projects-link .container a {
+  color: #1e3a8a; /* Darker blue shade */
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+#projects-link .container a:hover {
+  color: #0f172a; /* Extra dark on hover */
+}
+
+
+/* GITHUB LINK */
+.github-link{ color: blue; font-weight: 900; font-size: larger;}
 
 /* ==========================================================================
    BUTTON STYLES (With the signature blue glow shadow)
@@ -1952,6 +1992,14 @@ p.explain {
   display: block;
   margin: 0;
 } 
+
+.AI-img{
+  width: 550px;
+   height: auto;
+  display: block;
+  margin: 0; 
+}
+
   .card--tool{ padding: 0px;}
 
   /* ===== Specials ==================================== */
