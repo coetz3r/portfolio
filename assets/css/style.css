@@ -849,7 +849,7 @@ footer { background: #020218; padding: 32px 60px; display: flex; align-items: ce
 .vanilla-banner-title { color: white; padding-top: 20px; }
 .vanilla-banner-em { color: var(--text-muted); font-size: 2rem; }
 .vanilla-banner-p { padding-top: 20px; }
-.vanilla-banner{ background-color: var(--border-subtle); border-radius: 35px; }
+.vanilla-banner{ background-color: var(--color-brand-mid); border-radius: 35px; }
 .van{ background-color: var(--bg-main); margin: 10px 150px; padding: 1px; h2.van{font-size: 1.2rem; }}
 .my-ico2n{ padding: 10px 75px;} 
 
@@ -1665,6 +1665,73 @@ case-study.html
   height: 100%;
   border: none;
 }
+/* CASE STUDY */
+/* Rounded Container Box */
+#projects-showcase .container--split {
+  background-color: #ffffff;
+  border: 1px solid #dcdfe6;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  
+  /* Layout Alignment */
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  text-align: left;
+}
+
+/* Left Image Column */
+.container__media {
+  flex: 0 0 40%; /* Adjust image width ratio */
+}
+
+.container__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Right Content Column */
+.container__content {
+  flex: 1;
+}
+
+.container__title {
+  margin: 0 0 12px 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.container__text {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.container__text a {
+  color: #1e3a8a;
+   font-weight: 900;
+   font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #projects-showcase .container--split {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .container__media {
+    width: 100%;
+  }
+}
+
 
 /* ======================================================
    MOBILE RESPONSIVE — smaller than 768px
